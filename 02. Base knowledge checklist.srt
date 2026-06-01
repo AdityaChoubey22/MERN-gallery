@@ -1,0 +1,52 @@
+1
+00:00:00,05 --> 00:00:02,05
+- [Lecturer] As this course is an exploration of how
+
+2
+00:00:02,05 --> 00:00:05,08
+to build a full stack application with React, Express,
+
+3
+00:00:05,08 --> 00:00:10,00
+Mongo, and Node, some basic understanding of Node, NPM
+
+4
+00:00:10,00 --> 00:00:13,06
+and its commands isn't a must, but will help you.
+
+5
+00:00:13,06 --> 00:00:15,09
+Next, experience with JavaScript,
+
+6
+00:00:15,09 --> 00:00:20,03
+especially the latest syntax is essential to follow along.
+
+7
+00:00:20,03 --> 00:00:22,02
+As you'll see, I'm running on a Mac,
+
+8
+00:00:22,02 --> 00:00:24,00
+but you can follow along on a PC
+
+9
+00:00:24,00 --> 00:00:28,01
+as the tools work exactly the same on both platforms.
+
+10
+00:00:28,01 --> 00:00:30,09
+Also, I'm using VS code as my code editor,
+
+11
+00:00:30,09 --> 00:00:34,01
+but feel free to use whatever tool you prefer,
+
+12
+00:00:34,01 --> 00:00:36,01
+although I recommend using an editor
+
+13
+00:00:36,01 --> 00:00:38,00
+with a built-in terminal.
+

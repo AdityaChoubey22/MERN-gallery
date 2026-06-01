@@ -1,0 +1,76 @@
+1
+00:00:00,03 --> 00:00:01,06
+- [Manny] Have you mastered React
+
+2
+00:00:01,06 --> 00:00:04,05
+or wondered how to build a backend with React?
+
+3
+00:00:04,05 --> 00:00:08,02
+Would you like to learn more about Node, Express, and Mongo,
+
+4
+00:00:08,02 --> 00:00:09,08
+and how they integrate with React
+
+5
+00:00:09,08 --> 00:00:11,07
+as a full-stack application?
+
+6
+00:00:11,07 --> 00:00:14,04
+If the answer is yes to any of these questions,
+
+7
+00:00:14,04 --> 00:00:16,05
+you've come to the right place.
+
+8
+00:00:16,05 --> 00:00:20,03
+We'll set up the required libraries and tools to get going.
+
+9
+00:00:20,03 --> 00:00:22,08
+Next, we'll set the stage for a backend
+
+10
+00:00:22,08 --> 00:00:25,06
+with our initial Node and Express server.
+
+11
+00:00:25,06 --> 00:00:27,08
+Then we'll set up our Mongo database
+
+12
+00:00:27,08 --> 00:00:31,01
+along with defining all the routing endpoints.
+
+13
+00:00:31,01 --> 00:00:34,08
+And finally, we'll create a React frontend and add a form
+
+14
+00:00:34,08 --> 00:00:38,01
+and the UI elements to present our data to our users.
+
+15
+00:00:38,01 --> 00:00:41,04
+Hi, I'm Manny Henry, and I've been working with Node,
+
+16
+00:00:41,04 --> 00:00:44,03
+React, and JavaScript for a very long time.
+
+17
+00:00:44,03 --> 00:00:45,04
+So if you're ready to build
+
+18
+00:00:45,04 --> 00:00:47,08
+your own full-stack application with MERN,
+
+19
+00:00:47,08 --> 00:00:51,00
+fire up your favorite editor and let's get started.
+
