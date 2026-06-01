@@ -1,0 +1,316 @@
+1
+00:00:00,06 --> 00:00:01,05
+- [Instructor] This course, we'll use
+
+2
+00:00:01,05 --> 00:00:03,08
+the latest JavaScript syntax throughout.
+
+3
+00:00:03,08 --> 00:00:05,08
+And we want to be able to code our server
+
+4
+00:00:05,08 --> 00:00:09,06
+without worrying about any syntax breaking our application.
+
+5
+00:00:09,06 --> 00:00:12,00
+So Babel is the tool we'll set up to help
+
+6
+00:00:12,00 --> 00:00:13,09
+with compiling our code.
+
+7
+00:00:13,09 --> 00:00:16,05
+And let's also install the main dependencies
+
+8
+00:00:16,05 --> 00:00:17,09
+while we're at it.
+
+9
+00:00:17,09 --> 00:00:19,01
+So the first thing I'm going to do
+
+10
+00:00:19,01 --> 00:00:23,05
+is go inside of my backend folder first.
+
+11
+00:00:23,05 --> 00:00:25,02
+So the way we're going to do this
+
+12
+00:00:25,02 --> 00:00:27,01
+is go inside of our terminal.
+
+13
+00:00:27,01 --> 00:00:30,02
+So open up a new terminal.
+
+14
+00:00:30,02 --> 00:00:32,01
+And what I'm going to do first,
+
+15
+00:00:32,01 --> 00:00:34,04
+just to make sure I'm in the right directory,
+
+16
+00:00:34,04 --> 00:00:36,04
+which is the backend, I'm going to do an ls.
+
+17
+00:00:36,04 --> 00:00:38,06
+So clearly I'm not in the backend yet,
+
+18
+00:00:38,06 --> 00:00:40,06
+so I'm going to do cd backend.
+
+19
+00:00:40,06 --> 00:00:42,05
+And then in that particular directory,
+
+20
+00:00:42,05 --> 00:00:45,09
+I'm going to do an npm init.
+
+21
+00:00:45,09 --> 00:00:47,04
+Backend, version.
+
+22
+00:00:47,04 --> 00:00:50,04
+So I'm going to basically return all of these
+
+23
+00:00:50,04 --> 00:00:53,03
+to get my package.json file.
+
+24
+00:00:53,03 --> 00:00:55,07
+Yes. We're all good.
+
+25
+00:00:55,07 --> 00:00:57,07
+Then what I'm going to do is start installing
+
+26
+00:00:57,07 --> 00:00:58,07
+the dev dependencies.
+
+27
+00:00:58,07 --> 00:01:00,09
+So I'm going to do npm i
+
+28
+00:01:00,09 --> 00:01:06,00
+or you can do install --save-dev,
+
+29
+00:01:06,00 --> 00:01:07,07
+and I'm going to install a few dependencies.
+
+30
+00:01:07,07 --> 00:01:12,09
+The first one is babel/cli, so we can use it.
+
+31
+00:01:12,09 --> 00:01:14,06
+The second one is babel/core.
+
+32
+00:01:14,06 --> 00:01:17,08
+So we need the core code of Babel.
+
+33
+00:01:17,08 --> 00:01:19,07
+Then we need a particular package
+
+34
+00:01:19,07 --> 00:01:21,02
+that's called node in our case
+
+35
+00:01:21,02 --> 00:01:22,09
+because this is a node server.
+
+36
+00:01:22,09 --> 00:01:25,07
+And then, finally, just to make sure we have
+
+37
+00:01:25,07 --> 00:01:29,04
+the latest code covered for JavaScript,
+
+38
+00:01:29,04 --> 00:01:32,01
+we're going to do preset environment.
+
+39
+00:01:32,01 --> 00:01:37,03
+So I'm first going to install these dev dependencies.
+
+40
+00:01:37,03 --> 00:01:40,08
+Once this is done, you can check it very quickly.
+
+41
+00:01:40,08 --> 00:01:42,01
+Go to package.json,
+
+42
+00:01:42,01 --> 00:01:47,00
+you're going to see your dev dependencies right here.
+
+43
+00:01:47,00 --> 00:01:50,06
+Then what I'm going to do is install
+
+44
+00:01:50,06 --> 00:01:52,06
+the main dependencies that I need.
+
+45
+00:01:52,06 --> 00:01:54,09
+So, for this particular project,
+
+46
+00:01:54,09 --> 00:01:56,01
+we're going to need a few things,
+
+47
+00:01:56,01 --> 00:01:59,02
+and we're going to need and use all of these.
+
+48
+00:01:59,02 --> 00:02:03,08
+So, first, I'm going to do npm i or install.
+
+49
+00:02:03,08 --> 00:02:07,09
+I'm going to need body-parser
+
+50
+00:02:07,09 --> 00:02:09,05
+cors
+
+51
+00:02:09,05 --> 00:02:10,08
+express
+
+52
+00:02:10,08 --> 00:02:13,03
+mongoose
+
+53
+00:02:13,03 --> 00:02:14,04
+at nodemon.
+
+54
+00:02:14,04 --> 00:02:16,03
+We're going to need all of these.
+
+55
+00:02:16,03 --> 00:02:20,04
+And we'll install them ahead, like so.
+
+56
+00:02:20,04 --> 00:02:23,03
+Okay. So we installed all that we need.
+
+57
+00:02:23,03 --> 00:02:25,03
+If you look here on the package.json,
+
+58
+00:02:25,03 --> 00:02:28,07
+we have our dependencies and we have our dev dependencies.
+
+59
+00:02:28,07 --> 00:02:30,00
+Perfect.
+
+60
+00:02:30,00 --> 00:02:31,02
+So now what we're going to do,
+
+61
+00:02:31,02 --> 00:02:33,03
+inside of the backend folder,
+
+62
+00:02:33,03 --> 00:02:38,09
+we're going to create a new file that we'll call babel.rc.
+
+63
+00:02:38,09 --> 00:02:42,00
+So you want to make sure you're in that folder.
+
+64
+00:02:42,00 --> 00:02:46,00
+And you do .babelrc.
+
+65
+00:02:46,00 --> 00:02:48,09
+And just a quick note about this file.
+
+66
+00:02:48,09 --> 00:02:50,09
+In the exercise files,
+
+67
+00:02:50,09 --> 00:02:53,08
+if you can't see that particular file,
+
+68
+00:02:53,08 --> 00:02:55,09
+it's because it's hidden.
+
+69
+00:02:55,09 --> 00:02:58,00
+So you want to make sure that your system
+
+70
+00:02:58,00 --> 00:02:59,06
+shows hidden files.
+
+71
+00:02:59,06 --> 00:03:01,07
+Once you show hidden files,
+
+72
+00:03:01,07 --> 00:03:03,02
+you're going to be able to see that file.
+
+73
+00:03:03,02 --> 00:03:05,07
+So it's very important to do that.
+
+74
+00:03:05,07 --> 00:03:07,01
+And basically, it's going to be
+
+75
+00:03:07,01 --> 00:03:10,04
+very quickly set with presets,
+
+76
+00:03:10,04 --> 00:03:18,04
+and I need to load the @babel preset environment.
+
+77
+00:03:18,04 --> 00:03:20,03
+And that's pretty much what we need to set up
+
+78
+00:03:20,03 --> 00:03:21,06
+for our backend.
+
+79
+00:03:21,06 --> 00:03:25,00
+We'll keep working on it in the following videos.
+

@@ -1,0 +1,100 @@
+1
+00:00:00,05 --> 00:00:02,03
+- [Instructor] So before we start adding endpoints
+
+2
+00:00:02,03 --> 00:00:04,08
+to our server, let's set up our folder structure
+
+3
+00:00:04,08 --> 00:00:06,02
+for a project.
+
+4
+00:00:06,02 --> 00:00:08,02
+I personally put everything in a source folder
+
+5
+00:00:08,02 --> 00:00:10,07
+and then start branching out the folders
+
+6
+00:00:10,07 --> 00:00:12,05
+and files I'll use for the server,
+
+7
+00:00:12,05 --> 00:00:14,07
+my controllers, models and routes,
+
+8
+00:00:14,07 --> 00:00:16,02
+so let's get to it.
+
+9
+00:00:16,02 --> 00:00:18,04
+Inside the backend folder,
+
+10
+00:00:18,04 --> 00:00:21,05
+I'm going to start adding a whole bunch of folders here.
+
+11
+00:00:21,05 --> 00:00:26,04
+So we're going to start by adding controllers.
+
+12
+00:00:26,04 --> 00:00:31,03
+We're also going to add models.
+
+13
+00:00:31,03 --> 00:00:35,08
+And we're also going to add routes.
+
+14
+00:00:35,08 --> 00:00:38,03
+And inside of each of these folders,
+
+15
+00:00:38,03 --> 00:00:40,00
+we're going to add one file.
+
+16
+00:00:40,00 --> 00:00:42,08
+So in the controllers, we're going to add
+
+17
+00:00:42,08 --> 00:00:50,05
+a playerControllers.js file.
+
+18
+00:00:50,05 --> 00:00:53,07
+Inside the models we're going to add
+
+19
+00:00:53,07 --> 00:00:59,02
+a playerModel.js.
+
+20
+00:00:59,02 --> 00:01:00,09
+And then in the routes,
+
+21
+00:01:00,09 --> 00:01:07,07
+we're going to add soccerRoutes.js.
+
+22
+00:01:07,07 --> 00:01:09,05
+So this is fairly straightforward,
+
+23
+00:01:09,05 --> 00:01:11,06
+and we'll start adding items to this file
+
+24
+00:01:11,06 --> 00:01:14,08
+as we add our routes, models, and controllers.
+
+25
+00:01:14,08 --> 00:01:16,00
+So let's move on.
+

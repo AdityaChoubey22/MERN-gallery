@@ -1,0 +1,332 @@
+1
+00:00:00,05 --> 00:00:02,02
+- [Instructor] Now the fun begins.
+
+2
+00:00:02,02 --> 00:00:05,00
+We'll start by creating our initial server code
+
+3
+00:00:05,00 --> 00:00:07,08
+and making sure it is running properly.
+
+4
+00:00:07,08 --> 00:00:10,05
+We'll simply work on the basis of our server,
+
+5
+00:00:10,05 --> 00:00:14,01
+which will add more and more as we build our backend APIs.
+
+6
+00:00:14,01 --> 00:00:15,04
+So the first thing we're going to do
+
+7
+00:00:15,04 --> 00:00:20,06
+is go inside the package.json file, right here.
+
+8
+00:00:20,06 --> 00:00:22,08
+And you can close the babelrc file.
+
+9
+00:00:22,08 --> 00:00:25,08
+And what we're going to do is add a little script.
+
+10
+00:00:25,08 --> 00:00:28,02
+You can move the test script, I usually do.
+
+11
+00:00:28,02 --> 00:00:30,08
+So I'm just going to remove this one.
+
+12
+00:00:30,08 --> 00:00:34,04
+And basically do a start script,
+
+13
+00:00:34,04 --> 00:00:38,05
+which I will basically write down this specific script
+
+14
+00:00:38,05 --> 00:00:40,06
+when we do npm start.
+
+15
+00:00:40,06 --> 00:00:42,09
+So it's going to be nodemon.
+
+16
+00:00:42,09 --> 00:00:47,05
+And we're going to be loading the index.js file.
+
+17
+00:00:47,05 --> 00:00:51,03
+And then we're going to execute through babel-node
+
+18
+00:00:51,03 --> 00:00:55,08
+and transpile the code using JavaScript.
+
+19
+00:00:55,08 --> 00:00:58,05
+So basically we're passing a nodemon script.
+
+20
+00:00:58,05 --> 00:01:00,08
+A nodemon, by the way, is basically
+
+21
+00:01:00,08 --> 00:01:02,07
+a server that restarts automatically
+
+22
+00:01:02,07 --> 00:01:04,09
+every time you do changes.
+
+23
+00:01:04,09 --> 00:01:08,06
+And we're passing the index.js file
+
+24
+00:01:08,06 --> 00:01:10,07
+that we're going to create momentarily.
+
+25
+00:01:10,07 --> 00:01:13,01
+And we're executing and transpiling the code
+
+26
+00:01:13,01 --> 00:01:14,01
+with babel-node.
+
+27
+00:01:14,01 --> 00:01:16,06
+So, you can save that.
+
+28
+00:01:16,06 --> 00:01:18,08
+And now what we're going to do is create,
+
+29
+00:01:18,08 --> 00:01:21,00
+inside the backend folder again,
+
+30
+00:01:21,00 --> 00:01:23,02
+the index.js file.
+
+31
+00:01:23,02 --> 00:01:25,08
+So let's go ahead and do that.
+
+32
+00:01:25,08 --> 00:01:27,00
+And inside of that file,
+
+33
+00:01:27,00 --> 00:01:30,01
+we're going to first import express.
+
+34
+00:01:30,01 --> 00:01:33,08
+From express.
+
+35
+00:01:33,08 --> 00:01:37,06
+Then we're going to create our server app
+
+36
+00:01:37,06 --> 00:01:42,05
+by passing the express server.
+
+37
+00:01:42,05 --> 00:01:44,09
+And then we're going to create the port
+
+38
+00:01:44,09 --> 00:01:47,07
+that our server is going to be running on.
+
+39
+00:01:47,07 --> 00:01:51,04
+So the variable that's going to pass the actual port number
+
+40
+00:01:51,04 --> 00:01:54,00
+so we can leverage it across several functions.
+
+41
+00:01:54,00 --> 00:01:57,02
+In this case, we're just going to choose 4000.
+
+42
+00:01:57,02 --> 00:02:01,02
+And then what we're going to do is use the express app.
+
+43
+00:02:01,02 --> 00:02:04,09
+And whenever we're calling this endpoint,
+
+44
+00:02:04,09 --> 00:02:09,02
+we're going to basically send that request
+
+45
+00:02:09,02 --> 00:02:14,01
+and send a response to this function.
+
+46
+00:02:14,01 --> 00:02:17,09
+And we're going to have a response and send it.
+
+47
+00:02:17,09 --> 00:02:23,03
+"Our application is running."
+
+48
+00:02:23,03 --> 00:02:29,00
+And we should use template strings and not regular strings.
+
+49
+00:02:29,00 --> 00:02:31,02
+So I'm going to do this
+
+50
+00:02:31,02 --> 00:02:35,00
+to pass the port inside of this string here.
+
+51
+00:02:35,00 --> 00:02:36,08
+"On port."
+
+52
+00:02:36,08 --> 00:02:38,04
+And how you use template strings,
+
+53
+00:02:38,04 --> 00:02:39,06
+if you're not familiar with it,
+
+54
+00:02:39,06 --> 00:02:45,07
+it's dollar sign and pass inside here
+
+55
+00:02:45,07 --> 00:02:47,00
+the variable that we set here.
+
+56
+00:02:47,00 --> 00:02:50,01
+So it's going to basically run this message and send it,
+
+57
+00:02:50,01 --> 00:02:52,09
+"Our application is running on port,"
+
+58
+00:02:52,09 --> 00:02:54,03
+whatever the port is.
+
+59
+00:02:54,03 --> 00:02:56,02
+So we're good.
+
+60
+00:02:56,02 --> 00:02:59,06
+Then we're going to be listening
+
+61
+00:02:59,06 --> 00:03:02,09
+to whenever the port is being request,
+
+62
+00:03:02,09 --> 00:03:09,07
+we're going to also, in the console log, run this command.
+
+63
+00:03:09,07 --> 00:03:12,03
+And then use template stringing again.
+
+64
+00:03:12,03 --> 00:03:19,03
+"Your soccer server is running on port,"
+
+65
+00:03:19,03 --> 00:03:21,06
+and then pass port.
+
+66
+00:03:21,06 --> 00:03:22,07
+Okay.
+
+67
+00:03:22,07 --> 00:03:25,04
+So now, this is all good.
+
+68
+00:03:25,04 --> 00:03:27,09
+We can actually save this.
+
+69
+00:03:27,09 --> 00:03:30,06
+And go inside of our terminal again,
+
+70
+00:03:30,06 --> 00:03:34,05
+I'm going to use the shortcut here to get into it.
+
+71
+00:03:34,05 --> 00:03:36,00
+If you're not familiar with the shortcuts,
+
+72
+00:03:36,00 --> 00:03:38,03
+all you have to do is click on Terminal, New Terminal,
+
+73
+00:03:38,03 --> 00:03:41,01
+and you're going to see the shortcut for your own system.
+
+74
+00:03:41,01 --> 00:03:44,07
+And I'm going to do an npm start.
+
+75
+00:03:44,07 --> 00:03:46,01
+And then it says, "Your soccer server
+
+76
+00:03:46,01 --> 00:03:47,02
+is running on port 4000."
+
+77
+00:03:47,02 --> 00:03:50,02
+If you open up a new window
+
+78
+00:03:50,02 --> 00:03:55,04
+and you do localhost:4000,
+
+79
+00:03:55,04 --> 00:03:58,02
+you're going to see that the message and the response is,
+
+80
+00:03:58,02 --> 00:04:01,03
+"Our application is running on port 4000."
+
+81
+00:04:01,03 --> 00:04:04,02
+Okay. So we got our server running,
+
+82
+00:04:04,02 --> 00:04:05,09
+ready to add more stuff to it.
+
+83
+00:04:05,09 --> 00:04:08,00
+So let's move on.
+
