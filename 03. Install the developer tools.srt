@@ -1,0 +1,180 @@
+1
+00:00:00,05 --> 00:00:02,00
+- [Instructor] React has a developer tool
+
+2
+00:00:02,00 --> 00:00:03,03
+that allows the developers
+
+3
+00:00:03,03 --> 00:00:05,06
+to see the state and the components
+
+4
+00:00:05,06 --> 00:00:07,03
+and inspect what is going wrong
+
+5
+00:00:07,03 --> 00:00:09,06
+while building your application.
+
+6
+00:00:09,06 --> 00:00:12,01
+We'll also install another tool called Postman
+
+7
+00:00:12,01 --> 00:00:14,06
+so we can test our backend as we build it.
+
+8
+00:00:14,06 --> 00:00:17,01
+So, let's go ahead and install these tools.
+
+9
+00:00:17,01 --> 00:00:21,01
+So the first one you need to find is React DevTools,
+
+10
+00:00:21,01 --> 00:00:23,02
+and if you're using Chrome like me,
+
+11
+00:00:23,02 --> 00:00:26,07
+what you can do is go directly to the Chrome Web Store
+
+12
+00:00:26,07 --> 00:00:28,03
+and install that tool.
+
+13
+00:00:28,03 --> 00:00:29,09
+It should look something like this.
+
+14
+00:00:29,09 --> 00:00:33,03
+I already have it on my system, so I'm good to go.
+
+15
+00:00:33,03 --> 00:00:35,08
+But you need to find the React developer tools
+
+16
+00:00:35,08 --> 00:00:37,00
+and install this,
+
+17
+00:00:37,00 --> 00:00:38,04
+and this is what it's going to look like.
+
+18
+00:00:38,04 --> 00:00:40,08
+You're going to have the Components, Profiler,
+
+19
+00:00:40,08 --> 00:00:42,06
+and if you have Redux,
+
+20
+00:00:42,06 --> 00:00:44,08
+we're not going to use it in this course,
+
+21
+00:00:44,08 --> 00:00:46,07
+but if you have Redux in the future,
+
+22
+00:00:46,07 --> 00:00:50,06
+you can actually also install the Redux tool for your state.
+
+23
+00:00:50,06 --> 00:00:52,01
+But just for this course,
+
+24
+00:00:52,01 --> 00:00:55,01
+we're going to have the Components and the Profiler here,
+
+25
+00:00:55,01 --> 00:00:56,08
+and we'll be able to inspect it
+
+26
+00:00:56,08 --> 00:00:59,01
+through the React developer tools.
+
+27
+00:00:59,01 --> 00:01:01,08
+The other tool that I recommend installing as well,
+
+28
+00:01:01,08 --> 00:01:06,01
+that I use all the time for any of the APIs that I create,
+
+29
+00:01:06,01 --> 00:01:08,00
+is Postman.
+
+30
+00:01:08,00 --> 00:01:10,07
+Postman is a great tool to test your APIs
+
+31
+00:01:10,07 --> 00:01:14,03
+to make any calls for whatever the API you're looking for
+
+32
+00:01:14,03 --> 00:01:17,04
+with all the information that you need to make the calls,
+
+33
+00:01:17,04 --> 00:01:21,01
+and then you get the return from the API.
+
+34
+00:01:21,01 --> 00:01:22,05
+And it's a great tool.
+
+35
+00:01:22,05 --> 00:01:23,06
+Once you have it installed,
+
+36
+00:01:23,06 --> 00:01:24,09
+it's going to look something like this.
+
+37
+00:01:24,09 --> 00:01:27,03
+So as we are installing
+
+38
+00:01:27,03 --> 00:01:31,02
+and creating our server with the APIs,
+
+39
+00:01:31,02 --> 00:01:33,08
+we're going to test this right here
+
+40
+00:01:33,08 --> 00:01:35,01
+and we're going to be able
+
+41
+00:01:35,01 --> 00:01:37,04
+to get the response from the server
+
+42
+00:01:37,04 --> 00:01:39,05
+and know that it's working properly.
+
+43
+00:01:39,05 --> 00:01:42,01
+So take some time, install those tools,
+
+44
+00:01:42,01 --> 00:01:44,02
+and when you're ready to go for the next video,
+
+45
+00:01:44,02 --> 00:01:46,00
+I'll see you there.
+

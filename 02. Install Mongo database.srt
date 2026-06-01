@@ -1,0 +1,252 @@
+1
+00:00:00,05 --> 00:00:02,08
+- [Instructor] Before we get started on installing Mongo,
+
+2
+00:00:02,08 --> 00:00:05,03
+for those who aren't familiar with Mongo,
+
+3
+00:00:05,03 --> 00:00:08,06
+here's a quick refresher on what it is.
+
+4
+00:00:08,06 --> 00:00:10,06
+MongoDB is a database system
+
+5
+00:00:10,06 --> 00:00:13,04
+that organizes data into collections,
+
+6
+00:00:13,04 --> 00:00:15,03
+which consist of documents
+
+7
+00:00:15,03 --> 00:00:18,09
+or objects resembling JSON objects.
+
+8
+00:00:18,09 --> 00:00:21,02
+These documents contain data structured
+
+9
+00:00:21,02 --> 00:00:24,00
+in key value pairs or arrays,
+
+10
+00:00:24,00 --> 00:00:26,02
+allowing for the efficient organization
+
+11
+00:00:26,02 --> 00:00:28,03
+and retrieval of data.
+
+12
+00:00:28,03 --> 00:00:31,03
+An example provided is a player's collection
+
+13
+00:00:31,03 --> 00:00:33,00
+where each player is represented
+
+14
+00:00:33,00 --> 00:00:35,07
+as a document within this collection.
+
+15
+00:00:35,07 --> 00:00:38,01
+This structure supports a flexible
+
+16
+00:00:38,01 --> 00:00:41,00
+and intuitive approach to date management,
+
+17
+00:00:41,00 --> 00:00:44,01
+catering to a wide range of applications.
+
+18
+00:00:44,01 --> 00:00:47,03
+So now let's get started on installing Mongo for a server.
+
+19
+00:00:47,03 --> 00:00:49,00
+In order to be able to use Mongo,
+
+20
+00:00:49,00 --> 00:00:51,00
+you need to have it installed locally
+
+21
+00:00:51,00 --> 00:00:53,08
+or use the Atlas cloud-based version.
+
+22
+00:00:53,08 --> 00:00:56,09
+Feel free to use the cloud-based version if you want.
+
+23
+00:00:56,09 --> 00:00:59,09
+But for this project, I'll use the local one.
+
+24
+00:00:59,09 --> 00:01:02,01
+All you have to do is first of all,
+
+25
+00:01:02,01 --> 00:01:06,03
+look for the Install MongoDB Community page.
+
+26
+00:01:06,03 --> 00:01:08,02
+So you can search for this on Google,
+
+27
+00:01:08,02 --> 00:01:09,08
+and once you've found that page,
+
+28
+00:01:09,08 --> 00:01:11,00
+all you have to do is go
+
+29
+00:01:11,00 --> 00:01:13,06
+for the operating system that you have
+
+30
+00:01:13,06 --> 00:01:16,00
+and install it on your system.
+
+31
+00:01:16,00 --> 00:01:18,02
+So for example, I have macOS,
+
+32
+00:01:18,02 --> 00:01:21,09
+so I would click here and then follow the instructions.
+
+33
+00:01:21,09 --> 00:01:23,08
+I'm not going to go through all the instructions
+
+34
+00:01:23,08 --> 00:01:26,02
+'cause they're well explained here on the website.
+
+35
+00:01:26,02 --> 00:01:29,03
+So feel free to go ahead and install it on your system.
+
+36
+00:01:29,03 --> 00:01:31,05
+So you have Windows here.
+
+37
+00:01:31,05 --> 00:01:32,04
+You have Linux,
+
+38
+00:01:32,04 --> 00:01:35,06
+and if you want to have a container running Mongo,
+
+39
+00:01:35,06 --> 00:01:38,03
+you can install it on Docker right here.
+
+40
+00:01:38,03 --> 00:01:39,06
+Once you have it installed,
+
+41
+00:01:39,06 --> 00:01:41,09
+and just to make sure that it's working properly
+
+42
+00:01:41,09 --> 00:01:42,07
+in the background
+
+43
+00:01:42,07 --> 00:01:46,00
+'cause otherwise, once we start putting the server together,
+
+44
+00:01:46,00 --> 00:01:48,07
+you're going to have errors running in your console,
+
+45
+00:01:48,07 --> 00:01:53,09
+what you have to do is go to this webpage, robomongo.org
+
+46
+00:01:53,09 --> 00:01:56,06
+and installs Studio 3T.
+
+47
+00:01:56,06 --> 00:01:57,09
+And once you have it installed,
+
+48
+00:01:57,09 --> 00:02:00,06
+what you can do is literally open it
+
+49
+00:02:00,06 --> 00:02:02,06
+and open a connection
+
+50
+00:02:02,06 --> 00:02:06,06
+to localhost port 27017.
+
+51
+00:02:06,06 --> 00:02:09,00
+This is where Mongo usually runs.
+
+52
+00:02:09,00 --> 00:02:11,09
+So I can actually click on a connection here,
+
+53
+00:02:11,09 --> 00:02:15,04
+or you can create a brand new connection by clicking here.
+
+54
+00:02:15,04 --> 00:02:18,00
+So what you could do is create a new connection
+
+55
+00:02:18,00 --> 00:02:19,05
+and then add to it.
+
+56
+00:02:19,05 --> 00:02:20,06
+So let's say, for example,
+
+57
+00:02:20,06 --> 00:02:23,03
+you didn't have MongoDB already installed.
+
+58
+00:02:23,03 --> 00:02:24,08
+You can install it manually,
+
+59
+00:02:24,08 --> 00:02:26,09
+or you can paste the connections here.
+
+60
+00:02:26,09 --> 00:02:31,01
+But usually, this is the DB server where it's running,
+
+61
+00:02:31,01 --> 00:02:33,09
+and what you can do, you connect to it,
+
+62
+00:02:33,09 --> 00:02:37,03
+and if it's connected, and you see the collections here,
+
+63
+00:02:37,03 --> 00:02:39,00
+you're good to go.
+

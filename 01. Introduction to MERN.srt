@@ -1,0 +1,164 @@
+1
+00:00:00,05 --> 00:00:03,02
+- [Instructor] If you've never heard the term MERN before
+
+2
+00:00:03,02 --> 00:00:06,08
+and aren't familiar with what it is this video is for you.
+
+3
+00:00:06,08 --> 00:00:09,02
+Otherwise, feel free to skip it.
+
+4
+00:00:09,02 --> 00:00:13,02
+MERN stands for Mongo, Express, React, and Node.
+
+5
+00:00:13,02 --> 00:00:15,09
+It's a full-stack approach to building your frontend
+
+6
+00:00:15,09 --> 00:00:18,08
+and backend with these tools and being able to build
+
+7
+00:00:18,08 --> 00:00:21,02
+a full application end to end.
+
+8
+00:00:21,02 --> 00:00:25,02
+Mongo is the database, a document based, non-SQL database
+
+9
+00:00:25,02 --> 00:00:28,07
+that works well with JavaScript-based applications.
+
+10
+00:00:28,07 --> 00:00:33,03
+A MongoDB database is one big object containing collections.
+
+11
+00:00:33,03 --> 00:00:36,03
+Each collection could be like a contextual item,
+
+12
+00:00:36,03 --> 00:00:39,05
+like for example, players for the database we'll create.
+
+13
+00:00:39,05 --> 00:00:42,00
+Then inside the collection we have documents,
+
+14
+00:00:42,00 --> 00:00:44,00
+which are the players themselves.
+
+15
+00:00:44,00 --> 00:00:46,02
+So, one player would be in a document,
+
+16
+00:00:46,02 --> 00:00:49,00
+another a second document, etcetera.
+
+17
+00:00:49,00 --> 00:00:51,05
+And then inside each document we have the data
+
+18
+00:00:51,05 --> 00:00:54,06
+for each players, such as a name, team,
+
+19
+00:00:54,06 --> 00:00:57,03
+contact information, etcetera.
+
+20
+00:00:57,03 --> 00:01:00,01
+The documents looks like adjacent object
+
+21
+00:01:00,01 --> 00:01:03,06
+with a key value pair approach or arrays of data.
+
+22
+00:01:03,06 --> 00:01:05,09
+Express is the web server part,
+
+23
+00:01:05,09 --> 00:01:09,05
+and how we're able to build a Node-based backend.
+
+24
+00:01:09,05 --> 00:01:12,06
+In other words, our frontend will interact with the backend
+
+25
+00:01:12,06 --> 00:01:15,06
+through the use of Express syntax.
+
+26
+00:01:15,06 --> 00:01:19,01
+React is the frontend and where we'll build the components
+
+27
+00:01:19,01 --> 00:01:21,04
+that will allow our users to add players
+
+28
+00:01:21,04 --> 00:01:24,00
+and see the list of players in the team.
+
+29
+00:01:24,00 --> 00:01:26,03
+And finally, Node is the main element
+
+30
+00:01:26,03 --> 00:01:29,04
+that allows all these pieces to fit together
+
+31
+00:01:29,04 --> 00:01:32,04
+and is the server technology that is used.
+
+32
+00:01:32,04 --> 00:01:36,03
+It allows Express to add its syntax on top of its server
+
+33
+00:01:36,03 --> 00:01:38,04
+and create a web server.
+
+34
+00:01:38,04 --> 00:01:40,04
+Although we won't go into a full-on course
+
+35
+00:01:40,04 --> 00:01:43,05
+for each of these elements, we'll delve deep enough
+
+36
+00:01:43,05 --> 00:01:47,03
+so we understand how each part interacts with each other
+
+37
+00:01:47,03 --> 00:01:49,02
+and what are their functional roles
+
+38
+00:01:49,02 --> 00:01:51,07
+as we build the soccer application.
+
+39
+00:01:51,07 --> 00:01:53,07
+If you're curious and would like to learn more
+
+40
+00:01:53,07 --> 00:01:56,06
+about each part, feel free to browse our library
+
+41
+00:01:56,06 --> 00:02:00,00
+as we do have in-depth courses for each one.
+
