@@ -1,0 +1,624 @@
+1
+00:00:00,05 --> 00:00:02,03
+- [Instructor] Okay, so now we'll actually
+
+2
+00:00:02,03 --> 00:00:03,07
+add the post endpoint
+
+3
+00:00:03,07 --> 00:00:06,06
+so we can add new items into your database.
+
+4
+00:00:06,06 --> 00:00:09,07
+So the first thing I'm going to do is start playing
+
+5
+00:00:09,07 --> 00:00:12,03
+in the playerControllers area.
+
+6
+00:00:12,03 --> 00:00:14,09
+So, you go into controllers. You open up that file here.
+
+7
+00:00:14,09 --> 00:00:16,08
+I'm going to close this for a second,
+
+8
+00:00:16,08 --> 00:00:19,04
+and I'm going to start doing a few things
+
+9
+00:00:19,04 --> 00:00:26,02
+such as importing mongoose from mongoose,
+
+10
+00:00:26,02 --> 00:00:29,09
+and then I'm going to import the player schema
+
+11
+00:00:29,09 --> 00:00:34,01
+that we've just completed in the previous video,
+
+12
+00:00:34,01 --> 00:00:41,07
+PlayerSchema from models/playerModel.
+
+13
+00:00:41,07 --> 00:00:42,07
+There you go.
+
+14
+00:00:42,07 --> 00:00:49,05
+Now we're going to create a player with the mongoose,
+
+15
+00:00:49,05 --> 00:00:55,01
+and again, IntelliSense trying to help me.
+
+16
+00:00:55,01 --> 00:00:58,02
+And then we're going to import the model,
+
+17
+00:00:58,02 --> 00:01:03,00
+pass the playerModel with the PlayerSchema.
+
+18
+00:01:03,00 --> 00:01:06,04
+So basically, what we're doing is telling the controller
+
+19
+00:01:06,04 --> 00:01:08,09
+that we're going to create, momentarily,
+
+20
+00:01:08,09 --> 00:01:10,03
+if you create a player,
+
+21
+00:01:10,03 --> 00:01:13,04
+it needs to be using this PlayerSchema.
+
+22
+00:01:13,04 --> 00:01:16,09
+So, if the values that we're passing to this schema
+
+23
+00:01:16,09 --> 00:01:20,07
+or the controller are not fitting to the PlayerSchema,
+
+24
+00:01:20,07 --> 00:01:23,03
+then it's going to throw us an error.
+
+25
+00:01:23,03 --> 00:01:26,00
+That's basically why we created the schema.
+
+26
+00:01:26,00 --> 00:01:28,09
+So now, we're going to create a function
+
+27
+00:01:28,09 --> 00:01:31,08
+to add a new player.
+
+28
+00:01:31,08 --> 00:01:35,02
+This is going to use our post endpoint
+
+29
+00:01:35,02 --> 00:01:37,03
+that we'll create in the routes after.
+
+30
+00:01:37,03 --> 00:01:39,01
+So we're going to use async,
+
+31
+00:01:39,01 --> 00:01:41,07
+so make sure that we have a response
+
+32
+00:01:41,07 --> 00:01:48,00
+before we actually resolve this particular function.
+
+33
+00:01:48,00 --> 00:01:55,00
+And we're going to let newPlayer use new Player.
+
+34
+00:01:55,00 --> 00:01:57,06
+So as you can see right now, we're going to leverage
+
+35
+00:01:57,06 --> 00:02:00,09
+this variable that we created with the request body.
+
+36
+00:02:00,09 --> 00:02:03,00
+We're going to pass the request body,
+
+37
+00:02:03,00 --> 00:02:06,03
+and say, well, check what we're passing here.
+
+38
+00:02:06,03 --> 00:02:08,09
+Does it have all the types that we've set
+
+39
+00:02:08,09 --> 00:02:14,00
+or the required types in certain case that we've set?
+
+40
+00:02:14,00 --> 00:02:21,03
+So we're going to try to save the newPlayer to the database
+
+41
+00:02:21,03 --> 00:02:24,03
+and get a response back in JSON
+
+42
+00:02:24,03 --> 00:02:28,03
+and pass whatever is the response, right?
+
+43
+00:02:28,03 --> 00:02:29,06
+If not, catch the error.
+
+44
+00:02:29,06 --> 00:02:32,05
+So, that is the typical way
+
+45
+00:02:32,05 --> 00:02:35,03
+that we're going to do this here.
+
+46
+00:02:35,03 --> 00:02:39,00
+So, if there's an error, please send it
+
+47
+00:02:39,00 --> 00:02:40,08
+so we can see what happens.
+
+48
+00:02:40,08 --> 00:02:44,01
+Okay, so now, we have our post controller.
+
+49
+00:02:44,01 --> 00:02:45,06
+Now, we need to create the route.
+
+50
+00:02:45,06 --> 00:02:49,05
+Otherwise, Express server can't execute the function
+
+51
+00:02:49,05 --> 00:02:52,03
+without having a route to actually execute that function.
+
+52
+00:02:52,03 --> 00:02:56,05
+So, let's go ahead and save this. Close this.
+
+53
+00:02:56,05 --> 00:03:00,02
+Let's go into our route here.
+
+54
+00:03:00,02 --> 00:03:05,00
+Close explorer and import on controller first,
+
+55
+00:03:05,00 --> 00:03:07,03
+so we're going to do it this way
+
+56
+00:03:07,03 --> 00:03:11,01
+'cause I'm going to have a bunch of controllers eventually.
+
+57
+00:03:11,01 --> 00:03:14,01
+And one quick method to see if you're importing
+
+58
+00:03:14,01 --> 00:03:17,06
+the right thing is always to do the from first.
+
+59
+00:03:17,06 --> 00:03:19,06
+That's a good practice if you want to make sure
+
+60
+00:03:19,06 --> 00:03:20,09
+that you're doing the right thing.
+
+61
+00:03:20,09 --> 00:03:28,03
+So controllers/playerControllers.
+
+62
+00:03:28,03 --> 00:03:31,07
+So again, you're getting out of that folder,
+
+63
+00:03:31,07 --> 00:03:34,02
+so dot, dot, getting into the controllers,
+
+64
+00:03:34,02 --> 00:03:38,00
+playerControllers and you're importing,
+
+65
+00:03:38,00 --> 00:03:41,07
+and now I'm going to do this and say add,
+
+66
+00:03:41,07 --> 00:03:45,00
+and as you can see, I have the export available
+
+67
+00:03:45,00 --> 00:03:46,01
+because of IntelliSense.
+
+68
+00:03:46,01 --> 00:03:49,05
+So, what I'm going to do is basically return this
+
+69
+00:03:49,05 --> 00:03:52,00
+on the second line 'cause I'm going to have
+
+70
+00:03:52,00 --> 00:03:53,07
+a bunch of controllers
+
+71
+00:03:53,07 --> 00:03:55,07
+that are going to be loaded here eventually.
+
+72
+00:03:55,07 --> 00:03:59,06
+So, I'm just going to do it like that.
+
+73
+00:03:59,06 --> 00:04:03,03
+And now, we're going to create the routes.
+
+74
+00:04:03,03 --> 00:04:06,09
+So, I'm going to create a variable called routes,
+
+75
+00:04:06,09 --> 00:04:08,08
+which will pass the app,
+
+76
+00:04:08,08 --> 00:04:10,02
+so that's basically the function
+
+77
+00:04:10,02 --> 00:04:13,06
+that we're using in the index here if you see it.
+
+78
+00:04:13,06 --> 00:04:18,03
+So, we're passing the routes function and passing the app,
+
+79
+00:04:18,03 --> 00:04:22,09
+so we can actually on comment here, save it,
+
+80
+00:04:22,09 --> 00:04:24,02
+'cause we're going to have to do this anyway.
+
+81
+00:04:24,02 --> 00:04:25,04
+So, right now the application,
+
+82
+00:04:25,04 --> 00:04:27,02
+if you have your Node application open,
+
+83
+00:04:27,02 --> 00:04:29,01
+it's going to break with what we just did
+
+84
+00:04:29,01 --> 00:04:31,04
+because we haven't defined this properly yet
+
+85
+00:04:31,04 --> 00:04:34,02
+and we haven't even exported it yet.
+
+86
+00:04:34,02 --> 00:04:38,04
+So, let's make sure we finish that code here
+
+87
+00:04:38,04 --> 00:04:42,06
+and we're going to create app.route
+
+88
+00:04:42,06 --> 00:04:47,06
+so whenever we hit that players end point,
+
+89
+00:04:47,06 --> 00:04:53,01
+we're going to post with the addNewPlayer controller,
+
+90
+00:04:53,01 --> 00:04:58,02
+and that's your post route, and that's pretty much it.
+
+91
+00:04:58,02 --> 00:04:59,04
+That's all we need.
+
+92
+00:04:59,04 --> 00:05:04,08
+So now, we need to export default routes
+
+93
+00:05:04,08 --> 00:05:07,02
+and we should be good to go.
+
+94
+00:05:07,02 --> 00:05:11,04
+So, I'm going to save this and then go into my terminal,
+
+95
+00:05:11,04 --> 00:05:12,07
+run New Terminal,
+
+96
+00:05:12,07 --> 00:05:17,03
+make sure that I haven't made any mistakes in my coding
+
+97
+00:05:17,03 --> 00:05:19,02
+'cause it's always good to check your work
+
+98
+00:05:19,02 --> 00:05:21,02
+'cause you may have done a typo somewhere,
+
+99
+00:05:21,02 --> 00:05:23,07
+not imported something properly.
+
+100
+00:05:23,07 --> 00:05:24,06
+Just check your work.
+
+101
+00:05:24,06 --> 00:05:30,00
+So, I'm going to cd backend, npm start,
+
+102
+00:05:30,00 --> 00:05:32,07
+and everything is running properly,
+
+103
+00:05:32,07 --> 00:05:37,05
+and now, we can actually go and check that route.
+
+104
+00:05:37,05 --> 00:05:41,08
+So, what I'm going to do is open Postman
+
+105
+00:05:41,08 --> 00:05:46,00
+and go to a post command,
+
+106
+00:05:46,00 --> 00:05:54,00
+and the URL is going to be localhost:4000/players.
+
+107
+00:05:54,00 --> 00:05:55,09
+Let me just make sure that my route is right.
+
+108
+00:05:55,09 --> 00:05:58,08
+Yeah, so players, plural.
+
+109
+00:05:58,08 --> 00:06:03,00
+And then in the body, you're going to make sure
+
+110
+00:06:03,00 --> 00:06:07,02
+you select form-urlencoded.
+
+111
+00:06:07,02 --> 00:06:09,03
+You're going to start putting the keys,
+
+112
+00:06:09,03 --> 00:06:10,06
+so what are the keys?
+
+113
+00:06:10,06 --> 00:06:14,04
+So if we go back to our schema.
+
+114
+00:06:14,04 --> 00:06:16,08
+Let's go back here, make sure we're doing the right things.
+
+115
+00:06:16,08 --> 00:06:20,04
+I'm going to minimize this here. Let's go to our route.
+
+116
+00:06:20,04 --> 00:06:21,09
+Close this.
+
+117
+00:06:21,09 --> 00:06:25,07
+What we need for sure is a first name, last name, email,
+
+118
+00:06:25,07 --> 00:06:28,06
+and everything else is not required,
+
+119
+00:06:28,06 --> 00:06:31,01
+so we can actually go without doing anything else.
+
+120
+00:06:31,01 --> 00:06:34,00
+So let's just, for the sake of testing,
+
+121
+00:06:34,00 --> 00:06:38,03
+let's go and do first name, last name, email for starters.
+
+122
+00:06:38,03 --> 00:06:42,02
+So, firstName, and you want to make sure you actually type it
+
+123
+00:06:42,02 --> 00:06:46,09
+the same way that it's written here in your schema.
+
+124
+00:06:46,09 --> 00:06:49,09
+So firstName, lastName, email.
+
+125
+00:06:49,09 --> 00:06:54,00
+So firstName, Manny,
+
+126
+00:06:54,00 --> 00:06:57,08
+lastName, Henry.
+
+127
+00:06:57,08 --> 00:07:02,01
+Email me@me.com for test purposes.
+
+128
+00:07:02,01 --> 00:07:03,05
+And then let's just add something else
+
+129
+00:07:03,05 --> 00:07:05,00
+just for the fun of it,
+
+130
+00:07:05,00 --> 00:07:12,03
+phone, and just add like (444) 555-1234.
+
+131
+00:07:12,03 --> 00:07:16,03
+And then what else? We could do ability.
+
+132
+00:07:16,03 --> 00:07:20,04
+Let's add two and let's go with that first.
+
+133
+00:07:20,04 --> 00:07:24,09
+So, this is the localhost:4000. Send that command.
+
+134
+00:07:24,09 --> 00:07:26,09
+And we have the response here.
+
+135
+00:07:26,09 --> 00:07:30,07
+So, we have basically a player created
+
+136
+00:07:30,07 --> 00:07:32,05
+firstName, Manny, blah, blah, blah, blah.
+
+137
+00:07:32,05 --> 00:07:35,04
+If you want to check it all the way down to the database,
+
+138
+00:07:35,04 --> 00:07:40,03
+you can go back to Studio 3T and do another search,
+
+139
+00:07:40,03 --> 00:07:43,05
+and as you can see, we have already a first player
+
+140
+00:07:43,05 --> 00:07:46,00
+that's been created in the database,
+
+141
+00:07:46,00 --> 00:07:48,04
+so the same thing, but the ID, Manny, Henry,
+
+142
+00:07:48,04 --> 00:07:49,06
+blah blah blah.
+
+143
+00:07:49,06 --> 00:07:53,07
+So, as you can see, it is fairly easy to add an endpoint
+
+144
+00:07:53,07 --> 00:07:55,06
+and then test it with Postman.
+
+145
+00:07:55,06 --> 00:07:58,04
+So, we can also get some very good tips on code syntax
+
+146
+00:07:58,04 --> 00:08:00,05
+when you come around to the front end piece.
+
+147
+00:08:00,05 --> 00:08:04,02
+So, what I mean by that is if you go back to Postman,
+
+148
+00:08:04,02 --> 00:08:09,00
+you can actually go here and click on Code
+
+149
+00:08:09,00 --> 00:08:10,05
+and get some code snippet
+
+150
+00:08:10,05 --> 00:08:13,03
+how to actually do a post command
+
+151
+00:08:13,03 --> 00:08:17,07
+to this particular API with specific code.
+
+152
+00:08:17,07 --> 00:08:20,09
+If you want to save time, you can actually do this.
+
+153
+00:08:20,09 --> 00:08:24,00
+You can switch to any type of languages.
+
+154
+00:08:24,00 --> 00:08:28,02
+So if you're working, for example, in Python,
+
+155
+00:08:28,02 --> 00:08:31,02
+you can see what the actual code will look like
+
+156
+00:08:31,02 --> 00:08:36,00
+if you make a post request to this particular URL.
+

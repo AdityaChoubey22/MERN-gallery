@@ -1,0 +1,460 @@
+1
+00:00:00,05 --> 00:00:02,01
+- [Trainer] Before we start adding operations
+
+2
+00:00:02,01 --> 00:00:04,07
+to our database and the corresponding endpoints,
+
+3
+00:00:04,07 --> 00:00:06,09
+we need to create our schema.
+
+4
+00:00:06,09 --> 00:00:09,03
+The schema is what it takes, the types of data
+
+5
+00:00:09,03 --> 00:00:12,03
+and the structure of your data your database takes.
+
+6
+00:00:12,03 --> 00:00:15,05
+In other words, if you define a first name key
+
+7
+00:00:15,05 --> 00:00:17,04
+to take only a string data,
+
+8
+00:00:17,04 --> 00:00:19,07
+the database will not accept anything else.
+
+9
+00:00:19,07 --> 00:00:22,00
+Therefore, the schema defines the rules related
+
+10
+00:00:22,00 --> 00:00:23,09
+to what your database can accept.
+
+11
+00:00:23,09 --> 00:00:26,02
+So let's go ahead and build this.
+
+12
+00:00:26,02 --> 00:00:28,04
+So what we're going to do is close the index.
+
+13
+00:00:28,04 --> 00:00:30,00
+You can also close the terminal if you want.
+
+14
+00:00:30,00 --> 00:00:32,07
+We can always restart the server after.
+
+15
+00:00:32,07 --> 00:00:35,08
+And we're going to go in the models folder
+
+16
+00:00:35,08 --> 00:00:39,01
+and then the player models file.
+
+17
+00:00:39,01 --> 00:00:41,05
+So let's go ahead and first of all,
+
+18
+00:00:41,05 --> 00:00:42,09
+we need to import mongoose
+
+19
+00:00:42,09 --> 00:00:47,02
+'cause we're going to need mongoose to create the schema.
+
+20
+00:00:47,02 --> 00:00:51,05
+Then we're going to create a variable with schema,
+
+21
+00:00:51,05 --> 00:00:56,01
+which will be the mongoose schema, like so.
+
+22
+00:00:56,01 --> 00:00:57,06
+And let me just remove this.
+
+23
+00:00:57,06 --> 00:01:01,08
+That was just my talent sense working.
+
+24
+00:01:01,08 --> 00:01:04,02
+And then we're going to create the official schema.
+
+25
+00:01:04,02 --> 00:01:07,09
+So we're going to make it available by exporting it.
+
+26
+00:01:07,09 --> 00:01:16,04
+And we're going to call it PlayerSchema = new Schema.
+
+27
+00:01:16,04 --> 00:01:19,00
+And this schema will take a few things.
+
+28
+00:01:19,00 --> 00:01:20,04
+So what we're going to do,
+
+29
+00:01:20,04 --> 00:01:23,08
+we're going to define defaults required
+
+30
+00:01:23,08 --> 00:01:25,09
+for a bunch of these keys.
+
+31
+00:01:25,09 --> 00:01:28,00
+And I'm going to explain it as I go.
+
+32
+00:01:28,00 --> 00:01:35,07
+So the first name will be of type string,
+
+33
+00:01:35,07 --> 00:01:38,09
+and then we're going to make it required.
+
+34
+00:01:38,09 --> 00:01:41,06
+'Cause we need at least a first name.
+
+35
+00:01:41,06 --> 00:01:45,05
+So that means if you don't have data when you submit
+
+36
+00:01:45,05 --> 00:01:49,03
+your player to the database, if we don't have a first name,
+
+37
+00:01:49,03 --> 00:01:52,00
+it's going to throw you an error.
+
+38
+00:01:52,00 --> 00:01:54,08
+We're going to do the same for the last name.
+
+39
+00:01:54,08 --> 00:01:57,00
+Actually, if you want to save time typing,
+
+40
+00:01:57,00 --> 00:01:58,01
+you can actually just copy
+
+41
+00:01:58,01 --> 00:01:59,09
+and paste exactly the same thing here
+
+42
+00:01:59,09 --> 00:02:04,00
+and just change it to last name.
+
+43
+00:02:04,00 --> 00:02:07,01
+And might as well do the same for email.
+
+44
+00:02:07,01 --> 00:02:09,01
+It's also going to be a string
+
+45
+00:02:09,01 --> 00:02:11,01
+and it also going to be required.
+
+46
+00:02:11,01 --> 00:02:15,02
+So let's go ahead and set an email.
+
+47
+00:02:15,02 --> 00:02:17,07
+Then we're going to do a phone,
+
+48
+00:02:17,07 --> 00:02:20,06
+and we won't make it required.
+
+49
+00:02:20,06 --> 00:02:24,06
+And this one will be of type number.
+
+50
+00:02:24,06 --> 00:02:27,03
+Then we're going to iscoach.
+
+51
+00:02:27,03 --> 00:02:32,05
+So basically, saying, is this particular player a coach?
+
+52
+00:02:32,05 --> 00:02:37,00
+And this is going to be a type boolean,
+
+53
+00:02:37,00 --> 00:02:41,03
+and you can set a default for some data will be false.
+
+54
+00:02:41,03 --> 00:02:44,09
+So basically, most people are not going to be a coach.
+
+55
+00:02:44,09 --> 00:02:48,09
+Then we're going to set a team,
+
+56
+00:02:48,09 --> 00:02:53,05
+and this is going to be of type string.
+
+57
+00:02:53,05 --> 00:02:55,04
+And then we're going to set a bunch of skills
+
+58
+00:02:55,04 --> 00:02:57,01
+for each of the players.
+
+59
+00:02:57,01 --> 00:02:59,02
+And the way we're going to set these up
+
+60
+00:02:59,02 --> 00:03:00,07
+are going to be a bit different than
+
+61
+00:03:00,07 --> 00:03:02,02
+what we've done so far in this schema.
+
+62
+00:03:02,02 --> 00:03:06,02
+So first of all, we're going to set it as a type number
+
+63
+00:03:06,02 --> 00:03:09,07
+and then we're going to use enums
+
+64
+00:03:09,07 --> 00:03:13,02
+to set specific values that this takes.
+
+65
+00:03:13,02 --> 00:03:15,08
+So the skill sets are going to be either evaluated
+
+66
+00:03:15,08 --> 00:03:19,08
+by a one, a two, or a three.
+
+67
+00:03:19,08 --> 00:03:21,09
+So one being the lowest number
+
+68
+00:03:21,09 --> 00:03:23,04
+and three being the highest number.
+
+69
+00:03:23,04 --> 00:03:27,01
+So the more numbers that these particular players have,
+
+70
+00:03:27,01 --> 00:03:28,09
+the highest the score they're going to have
+
+71
+00:03:28,09 --> 00:03:30,08
+across all their skill sets.
+
+72
+00:03:30,08 --> 00:03:32,03
+So we're going to do this for a couple
+
+73
+00:03:32,03 --> 00:03:34,09
+of specific skill sets for each player.
+
+74
+00:03:34,09 --> 00:03:37,08
+So speeds is going to be the first one.
+
+75
+00:03:37,08 --> 00:03:43,07
+Then we're going to have strength, same thing,
+
+76
+00:03:43,07 --> 00:03:48,08
+then endurance.
+
+77
+00:03:48,08 --> 00:03:54,07
+Then we're going to have ability
+
+78
+00:03:54,07 --> 00:03:58,00
+and then technique.
+
+79
+00:03:58,00 --> 00:04:03,08
+And this one, I'm going to set as plural, techniques.
+
+80
+00:04:03,08 --> 00:04:07,01
+Is this player tactical?
+
+81
+00:04:07,01 --> 00:04:10,03
+And finally, we're going to create
+
+82
+00:04:10,03 --> 00:04:12,08
+a date when this record was created.
+
+83
+00:04:12,08 --> 00:04:17,01
+So created on the score date,
+
+84
+00:04:17,01 --> 00:04:22,05
+type: Date, and then we're going to set
+
+85
+00:04:22,05 --> 00:04:28,05
+a default with Date.now.
+
+86
+00:04:28,05 --> 00:04:32,04
+Okay, so basically, you set up your schema.
+
+87
+00:04:32,04 --> 00:04:34,02
+So this schema's going to be exported
+
+88
+00:04:34,02 --> 00:04:37,00
+and then used as we enter new data.
+
+89
+00:04:37,00 --> 00:04:43,06
+And if we save this and we go into our terminal again,
+
+90
+00:04:43,06 --> 00:04:47,05
+and we want to make sure again that we're in the backend,
+
+91
+00:04:47,05 --> 00:04:51,00
+if you're using the same terminal every single time,
+
+92
+00:04:51,00 --> 00:04:52,01
+you shouldn't have to do this.
+
+93
+00:04:52,01 --> 00:04:53,07
+But I'm doing this because I'm closing it
+
+94
+00:04:53,07 --> 00:04:56,04
+and opening it, so I'm in the right folder.
+
+95
+00:04:56,04 --> 00:05:00,00
+NPM start, no issues whatsoever.
+
+96
+00:05:00,00 --> 00:05:04,03
+Okay, so now, the schema has been basically not passed down
+
+97
+00:05:04,03 --> 00:05:07,06
+to the actual mongoose instance yet,
+
+98
+00:05:07,06 --> 00:05:12,00
+but what you can do is check inside of Studio 3T
+
+99
+00:05:12,00 --> 00:05:14,06
+if, right now, you have any soccer player.
+
+100
+00:05:14,06 --> 00:05:17,08
+So what you need to do first is connect to the database,
+
+101
+00:05:17,08 --> 00:05:20,04
+which as you can see, I'm already connected
+
+102
+00:05:20,04 --> 00:05:22,02
+to it with Studio T.
+
+103
+00:05:22,02 --> 00:05:24,06
+So you can actually do this if you're not connected,
+
+104
+00:05:24,06 --> 00:05:26,01
+but I'm actually connected.
+
+105
+00:05:26,01 --> 00:05:28,08
+And then you go down the list of all the databases
+
+106
+00:05:28,08 --> 00:05:31,05
+that you have, collection, then click on players.
+
+107
+00:05:31,05 --> 00:05:33,06
+It should open this command here.
+
+108
+00:05:33,06 --> 00:05:35,08
+Run the command and then if you
+
+109
+00:05:35,08 --> 00:05:37,02
+don't have any players enter,
+
+110
+00:05:37,02 --> 00:05:38,05
+it should be empty here.
+
+111
+00:05:38,05 --> 00:05:41,08
+So if I run this, I don't have any players here.
+
+112
+00:05:41,08 --> 00:05:43,03
+So as we add new players,
+
+113
+00:05:43,03 --> 00:05:46,02
+we're going to see them in this database.
+
+114
+00:05:46,02 --> 00:05:48,07
+All right, so now, that we have our schema setup,
+
+115
+00:05:48,07 --> 00:05:50,00
+let's move on.
+
