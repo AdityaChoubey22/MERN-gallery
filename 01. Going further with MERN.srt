@@ -1,0 +1,84 @@
+1
+00:00:00,05 --> 00:00:01,08
+- [Instructor] With your new knowledge,
+
+2
+00:00:01,08 --> 00:00:04,05
+you should be able to easily and quickly build
+
+3
+00:00:04,05 --> 00:00:06,06
+a full stack application with MERN
+
+4
+00:00:06,06 --> 00:00:10,03
+and apply it to almost any type of applications.
+
+5
+00:00:10,03 --> 00:00:11,03
+To explore this further,
+
+6
+00:00:11,03 --> 00:00:14,06
+you could simply replicate the same process we've done
+
+7
+00:00:14,06 --> 00:00:16,09
+by creating other collections, models
+
+8
+00:00:16,09 --> 00:00:19,01
+and schemas for your database,
+
+9
+00:00:19,01 --> 00:00:22,07
+and also create the new endpoints for the front end to call.
+
+10
+00:00:22,07 --> 00:00:25,07
+Also, if you'd like to keep exploring what you can do
+
+11
+00:00:25,07 --> 00:00:27,08
+with React, there are tons of courses
+
+12
+00:00:27,08 --> 00:00:30,01
+related to this front end framework.
+
+13
+00:00:30,01 --> 00:00:32,07
+Also, if you'd like to build mobile application
+
+14
+00:00:32,07 --> 00:00:34,08
+as your front end, you can explore React Native
+
+15
+00:00:34,08 --> 00:00:36,08
+as your next option.
+
+16
+00:00:36,08 --> 00:00:39,01
+Finally, if you prefer, you'd like to learn
+
+17
+00:00:39,01 --> 00:00:41,02
+a bit more about how to use Mongo
+
+18
+00:00:41,02 --> 00:00:44,06
+and what advanced queries are available with this database,
+
+19
+00:00:44,06 --> 00:00:47,09
+look for courses on this subject in our library.
+
+20
+00:00:47,09 --> 00:00:49,06
+Thanks very much for taking my course,
+
+21
+00:00:49,06 --> 00:00:51,00
+and I'll see you in a bit.
+
