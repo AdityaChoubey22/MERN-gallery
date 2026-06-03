@@ -1,0 +1,436 @@
+1
+00:00:00,05 --> 00:00:03,03
+- [Instructor] Okay, so let's get started on our frontend
+
+2
+00:00:03,03 --> 00:00:07,02
+by adding Materialize, a CSS library that will provide us
+
+3
+00:00:07,02 --> 00:00:09,03
+with a great template for our styles,
+
+4
+00:00:09,03 --> 00:00:12,00
+and then add a main structure for our main page.
+
+5
+00:00:12,00 --> 00:00:14,02
+And we also want to make sure that we keep
+
+6
+00:00:14,02 --> 00:00:18,05
+our server running because as we add our new pages,
+
+7
+00:00:18,05 --> 00:00:22,02
+as we add anything that will speak to the server,
+
+8
+00:00:22,02 --> 00:00:24,05
+you want to make sure that this is still running.
+
+9
+00:00:24,05 --> 00:00:27,04
+So, I'm still going to be in the same project here
+
+10
+00:00:27,04 --> 00:00:30,00
+'cause I'm going to have the backend and the frontend,
+
+11
+00:00:30,00 --> 00:00:33,00
+but you want to make sure that you run a new server
+
+12
+00:00:33,00 --> 00:00:35,07
+with a new terminal here.
+
+13
+00:00:35,07 --> 00:00:37,07
+So, leave this one running.
+
+14
+00:00:37,07 --> 00:00:39,04
+If you're working in VS Code
+
+15
+00:00:39,04 --> 00:00:42,06
+or if you're working with your terminal on your computer
+
+16
+00:00:42,06 --> 00:00:45,02
+make sure you open a brand new window for a new terminal.
+
+17
+00:00:45,02 --> 00:00:47,07
+I'm going to do this now,
+
+18
+00:00:47,07 --> 00:00:53,09
+and what I'm going to do is cd into the frontend this time.
+
+19
+00:00:53,09 --> 00:00:56,06
+So, I'm in the right directory here,
+
+20
+00:00:56,06 --> 00:00:58,01
+and then I'm going to clear it
+
+21
+00:00:58,01 --> 00:01:01,05
+and use that as we work on our server.
+
+22
+00:01:01,05 --> 00:01:04,09
+Okay, so this is our Vite React frontend.
+
+23
+00:01:04,09 --> 00:01:08,07
+And again, if you haven't initiated a new frontend
+
+24
+00:01:08,07 --> 00:01:10,09
+with the Vite package go ahead
+
+25
+00:01:10,09 --> 00:01:14,08
+and go back to that video and create it.
+
+26
+00:01:14,08 --> 00:01:17,07
+And now what we're going to do is first of all go
+
+27
+00:01:17,07 --> 00:01:20,05
+into the index.html file
+
+28
+00:01:20,05 --> 00:01:24,05
+and we're going to add Materialize CSS in here,
+
+29
+00:01:24,05 --> 00:01:25,06
+so let's go ahead and do that.
+
+30
+00:01:25,06 --> 00:01:28,05
+So, I'm going to go to the Materialize page,
+
+31
+00:01:28,05 --> 00:01:32,07
+which is materializecss.com.
+
+32
+00:01:32,07 --> 00:01:35,09
+And then I'm going to click on Get Started,
+
+33
+00:01:35,09 --> 00:01:38,05
+and I'm going to use the CDN.
+
+34
+00:01:38,05 --> 00:01:42,07
+So, I'm going to first copy this link here
+
+35
+00:01:42,07 --> 00:01:47,09
+for the main CSS and I'm going to go here,
+
+36
+00:01:47,09 --> 00:01:52,07
+and I'm going to put it just above the title here like so.
+
+37
+00:01:52,07 --> 00:01:54,06
+And while we're here if you want to change the title
+
+38
+00:01:54,06 --> 00:02:02,02
+to something else, Soccer application, perfect.
+
+39
+00:02:02,02 --> 00:02:05,08
+And now what we need is the script to put in the body,
+
+40
+00:02:05,08 --> 00:02:13,00
+so I'm going to go back here and copy the script like so.
+
+41
+00:02:13,00 --> 00:02:15,09
+Go back to my project, put it in the body,
+
+42
+00:02:15,09 --> 00:02:19,09
+so it could be before or after the main.jsx.
+
+43
+00:02:19,09 --> 00:02:23,05
+I'm going to put it above like so.
+
+44
+00:02:23,05 --> 00:02:26,00
+And that's all you need to do here.
+
+45
+00:02:26,00 --> 00:02:29,00
+Now, the next thing I'm going to do is close the HTML
+
+46
+00:02:29,00 --> 00:02:31,07
+and go in the source folder.
+
+47
+00:02:31,07 --> 00:02:36,06
+And what I'm going to do is create a folder called Components.
+
+48
+00:02:36,06 --> 00:02:39,04
+So, go in the source folder, create a new folder,
+
+49
+00:02:39,04 --> 00:02:42,09
+and call this one Components.
+
+50
+00:02:42,09 --> 00:02:45,01
+And then inside the Components folder
+
+51
+00:02:45,01 --> 00:02:47,08
+I'm going to create a new folder,
+
+52
+00:02:47,08 --> 00:02:50,01
+and I'm going to call this Player.
+
+53
+00:02:50,01 --> 00:02:52,07
+And we're going to add a few things
+
+54
+00:02:52,07 --> 00:02:56,09
+in the Player folder down the road.
+
+55
+00:02:56,09 --> 00:03:00,01
+So, the first one that we're going to add
+
+56
+00:03:00,01 --> 00:03:02,09
+is PlayerForm.jsx.
+
+57
+00:03:02,09 --> 00:03:07,02
+So, if you select Player here you can add a new file
+
+58
+00:03:07,02 --> 00:03:12,07
+that's going to be called PlayerForm.jsx.
+
+59
+00:03:12,07 --> 00:03:19,01
+Add a new PlayerList.jsx.
+
+60
+00:03:19,01 --> 00:03:24,06
+And finally, again, add PlayerSingle,
+
+61
+00:03:24,06 --> 00:03:27,04
+and all of these are going to make sense as we build them.
+
+62
+00:03:27,04 --> 00:03:30,00
+I'm going to explain them as I build them.
+
+63
+00:03:30,00 --> 00:03:32,08
+All right, so in the Components folder
+
+64
+00:03:32,08 --> 00:03:41,04
+I'm going to drag and drop the App.css and the App.jsx,
+
+65
+00:03:41,04 --> 00:03:47,03
+so now you should have these App.css and App.jsx.
+
+66
+00:03:47,03 --> 00:03:50,01
+Inside the Components you should have a folder
+
+67
+00:03:50,01 --> 00:03:54,01
+called Player, which has these three here.
+
+68
+00:03:54,01 --> 00:03:56,03
+So, run the application very quickly
+
+69
+00:03:56,03 --> 00:03:58,03
+because we want to make sure that we fix anything
+
+70
+00:03:58,03 --> 00:04:00,09
+that we broke by moving all of these,
+
+71
+00:04:00,09 --> 00:04:03,05
+so let's go ahead and do that now.
+
+72
+00:04:03,05 --> 00:04:06,06
+So, npm start, and you're going to see
+
+73
+00:04:06,06 --> 00:04:08,06
+probably an error right away.
+
+74
+00:04:08,06 --> 00:04:13,08
+Actually no, it's not npm start, npm run dev for Vite.
+
+75
+00:04:13,08 --> 00:04:19,03
+And if you go to localhost:5173
+
+76
+00:04:19,03 --> 00:04:21,02
+it may actually give you an error.
+
+77
+00:04:21,02 --> 00:04:27,02
+So, I'm going to open a brand new window, localhost:5173,
+
+78
+00:04:27,02 --> 00:04:28,05
+and you see there's a few errors.
+
+79
+00:04:28,05 --> 00:04:30,06
+So, we need to fix those.
+
+80
+00:04:30,06 --> 00:04:33,06
+So, App.jsx is not in the right folder,
+
+81
+00:04:33,06 --> 00:04:37,06
+so let's go here and fix that.
+
+82
+00:04:37,06 --> 00:04:40,06
+So, I'm going to close these here.
+
+83
+00:04:40,06 --> 00:04:45,06
+And this comes from the index, the main.jsx.
+
+84
+00:04:45,06 --> 00:04:49,02
+So, it's looking for an App.jsx in the main folder,
+
+85
+00:04:49,02 --> 00:04:50,09
+but it's actually in the Components.
+
+86
+00:04:50,09 --> 00:04:55,06
+Let's go and give it where it is exactly.
+
+87
+00:04:55,06 --> 00:05:00,06
+So, I'm going to do this and then select Components
+
+88
+00:05:00,06 --> 00:05:03,03
+and then select App.
+
+89
+00:05:03,03 --> 00:05:09,09
+As I fix this what else it's giving me as an error?
+
+90
+00:05:09,09 --> 00:05:13,07
+And the viteLogo, which is in the assets.
+
+91
+00:05:13,07 --> 00:05:15,05
+We're actually not going to use this.
+
+92
+00:05:15,05 --> 00:05:18,06
+So, let's go into App,
+
+93
+00:05:18,06 --> 00:05:23,07
+and I'm going to remove those two logo here.
+
+94
+00:05:23,07 --> 00:05:24,09
+We don't need this,
+
+95
+00:05:24,09 --> 00:05:30,00
+and I'm going to remove them from the HTML.
+
+96
+00:05:30,00 --> 00:05:33,06
+And anyways, all of this is going to change fairly quickly.
+
+97
+00:05:33,06 --> 00:05:36,08
+In fact, if you want to avoid having any issues
+
+98
+00:05:36,08 --> 00:05:40,06
+you can actually go ahead and delete
+
+99
+00:05:40,06 --> 00:05:47,01
+all the HTML that we have in this component.
+
+100
+00:05:47,01 --> 00:05:51,05
+Remove the state, we're not going to use this.
+
+101
+00:05:51,05 --> 00:05:54,09
+And then just run this, save.
+
+102
+00:05:54,09 --> 00:05:59,01
+Remove state here, we're not going to use either.
+
+103
+00:05:59,01 --> 00:06:01,03
+And we should be back to normal here, yep.
+
+104
+00:06:01,03 --> 00:06:04,00
+And if you go back to the app
+
+105
+00:06:04,00 --> 00:06:07,04
+it is an empty page, which is normal,
+
+106
+00:06:07,04 --> 00:06:09,07
+which is what we're looking for.
+
+107
+00:06:09,07 --> 00:06:13,00
+Okay, so this is it for this video.
+
+108
+00:06:13,00 --> 00:06:15,05
+Let's move on and keep working on this
+
+109
+00:06:15,05 --> 00:06:17,00
+in the following videos.
+
