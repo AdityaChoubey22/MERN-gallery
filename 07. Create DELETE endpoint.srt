@@ -1,0 +1,352 @@
+1
+00:00:00,05 --> 00:00:03,05
+- [Instructor] Okay, so finally but not least,
+
+2
+00:00:03,05 --> 00:00:05,06
+we need to add the endpoint
+
+3
+00:00:05,06 --> 00:00:08,09
+that will allow us to delete any players.
+
+4
+00:00:08,09 --> 00:00:11,03
+So again, we're going to start with the controller
+
+5
+00:00:11,03 --> 00:00:14,00
+and we're going to create a brand new controller
+
+6
+00:00:14,00 --> 00:00:17,09
+that will be called deletePlayer,
+
+7
+00:00:17,09 --> 00:00:21,03
+and we're going to make this function async,
+
+8
+00:00:21,03 --> 00:00:24,06
+request, response.
+
+9
+00:00:24,06 --> 00:00:26,09
+And let's do the function here.
+
+10
+00:00:26,09 --> 00:00:28,09
+We're going to try again,
+
+11
+00:00:28,09 --> 00:00:33,05
+and then as before, we're going to copy the catch,
+
+12
+00:00:33,05 --> 00:00:36,02
+send the error if there's an error,
+
+13
+00:00:36,02 --> 00:00:41,01
+and then here we're going to await Player,
+
+14
+00:00:41,01 --> 00:00:45,07
+and the function we're going to use is deleteOne.
+
+15
+00:00:45,07 --> 00:00:47,09
+We need to pass some parameters here.
+
+16
+00:00:47,09 --> 00:00:51,03
+So we need to pass an ID
+
+17
+00:00:51,03 --> 00:00:53,07
+and it's going to be what we have
+
+18
+00:00:53,07 --> 00:00:57,04
+in the prompts of the requests,
+
+19
+00:00:57,04 --> 00:01:01,08
+and we're going to be calling this PlayerID like so.
+
+20
+00:01:01,08 --> 00:01:04,09
+And that's basically the function that will delete one,
+
+21
+00:01:04,09 --> 00:01:07,03
+but then we don't have a response
+
+22
+00:01:07,03 --> 00:01:09,00
+because we don't have anything to send back,
+
+23
+00:01:09,00 --> 00:01:11,00
+so we need to send something different.
+
+24
+00:01:11,00 --> 00:01:11,08
+So in this case,
+
+25
+00:01:11,08 --> 00:01:14,02
+what we're going to do is send a message instead.
+
+26
+00:01:14,02 --> 00:01:17,09
+So we're going to create a JSON message
+
+27
+00:01:17,09 --> 00:01:20,00
+that will be as such.
+
+28
+00:01:20,00 --> 00:01:25,02
+Successfully deleted player.
+
+29
+00:01:25,02 --> 00:01:27,05
+And that's pretty much what we need.
+
+30
+00:01:27,05 --> 00:01:29,04
+We don't need to send anything else,
+
+31
+00:01:29,04 --> 00:01:32,06
+and that's the controller for you.
+
+32
+00:01:32,06 --> 00:01:33,09
+And then like before,
+
+33
+00:01:33,09 --> 00:01:38,06
+and again, if you feel like you get the gist of it now,
+
+34
+00:01:38,06 --> 00:01:41,06
+you can go ahead and pause the video and do it yourself,
+
+35
+00:01:41,06 --> 00:01:46,08
+but for everybody else, we need to have a delete endpoint,
+
+36
+00:01:46,08 --> 00:01:51,08
+and you want to make sure you first pass the controller here
+
+37
+00:01:51,08 --> 00:01:52,08
+'cause we're going to need it,
+
+38
+00:01:52,08 --> 00:01:58,06
+and the lead endpoint, and pass the deletePlayer.
+
+39
+00:01:58,06 --> 00:02:00,08
+And again, why we're using this
+
+40
+00:02:00,08 --> 00:02:02,09
+is because we need the player ID.
+
+41
+00:02:02,09 --> 00:02:05,08
+We need to know exactly which one we're deleting.
+
+42
+00:02:05,08 --> 00:02:10,08
+And so we need this endpoint to pass the ID of the player,
+
+43
+00:02:10,08 --> 00:02:13,08
+use this controller and this method
+
+44
+00:02:13,08 --> 00:02:19,04
+to delete a specific player.
+
+45
+00:02:19,04 --> 00:02:21,03
+And that's pretty much what we need.
+
+46
+00:02:21,03 --> 00:02:23,05
+So save this.
+
+47
+00:02:23,05 --> 00:02:27,06
+Make sure your server's running and there's no errors,
+
+48
+00:02:27,06 --> 00:02:29,06
+'cause it happens to all of us.
+
+49
+00:02:29,06 --> 00:02:32,07
+If there's an error here, you may have a typo,
+
+50
+00:02:32,07 --> 00:02:34,09
+you may have done something completely different
+
+51
+00:02:34,09 --> 00:02:36,04
+from what I've done,
+
+52
+00:02:36,04 --> 00:02:41,04
+or sometimes the version of the frameworks
+
+53
+00:02:41,04 --> 00:02:42,07
+that we're using in this course
+
+54
+00:02:42,07 --> 00:02:46,01
+are a bit behind what you're using.
+
+55
+00:02:46,01 --> 00:02:49,07
+It may have some things that are not working the same way.
+
+56
+00:02:49,07 --> 00:02:51,03
+If you're getting any messages,
+
+57
+00:02:51,03 --> 00:02:54,05
+my advice to you is always to Google it
+
+58
+00:02:54,05 --> 00:02:57,06
+to make sure that you understand what is the error
+
+59
+00:02:57,06 --> 00:02:59,01
+if you don't understand it,
+
+60
+00:02:59,01 --> 00:03:01,06
+and then fix it based on documentation.
+
+61
+00:03:01,06 --> 00:03:04,00
+So that's always my recommendation.
+
+62
+00:03:04,00 --> 00:03:05,02
+It happens to all of us.
+
+63
+00:03:05,02 --> 00:03:06,00
+It happens to me, too,
+
+64
+00:03:06,00 --> 00:03:10,07
+when I build applications for the companies that I work for.
+
+65
+00:03:10,07 --> 00:03:13,04
+Alright, so let's move on to test this.
+
+66
+00:03:13,04 --> 00:03:16,01
+So let's go to our database,
+
+67
+00:03:16,01 --> 00:03:18,06
+and let's run it here
+
+68
+00:03:18,06 --> 00:03:21,02
+just to make sure I have the latest and the greatest.
+
+69
+00:03:21,02 --> 00:03:24,00
+So I'm going to delete this one here.
+
+70
+00:03:24,00 --> 00:03:27,03
+So copy, value is text.
+
+71
+00:03:27,03 --> 00:03:30,07
+I'm going to delete this one and then we'll check back,
+
+72
+00:03:30,07 --> 00:03:33,08
+and I'm going to go in Postman.
+
+73
+00:03:33,08 --> 00:03:36,09
+And in this one, you don't need to send anything in the body
+
+74
+00:03:36,09 --> 00:03:45,01
+so I'm going to remove these and select the delete method.
+
+75
+00:03:45,01 --> 00:03:50,01
+Make sure I'm pasting the exact ID that I want to delete.
+
+76
+00:03:50,01 --> 00:03:52,00
+This is the endpoint.
+
+77
+00:03:52,00 --> 00:03:54,00
+So I'm going to send this
+
+78
+00:03:54,00 --> 00:03:55,05
+and the message that I get back
+
+79
+00:03:55,05 --> 00:03:57,04
+is, "Successfully deleted player."
+
+80
+00:03:57,04 --> 00:03:59,02
+And if you want to be absolutely sure,
+
+81
+00:03:59,02 --> 00:04:01,09
+but you would get in there if it didn't work,
+
+82
+00:04:01,09 --> 00:04:05,04
+you could go back to the source of the data
+
+83
+00:04:05,04 --> 00:04:07,02
+and you'll see that this particular ID
+
+84
+00:04:07,02 --> 00:04:12,03
+will be gone once I run query again in Mongo.
+
+85
+00:04:12,03 --> 00:04:14,09
+And again, you see that it worked.
+
+86
+00:04:14,09 --> 00:04:18,01
+Okay, so that completes our backend.
+
+87
+00:04:18,01 --> 00:04:21,09
+We're going to be moving to the front end, which is exciting,
+
+88
+00:04:21,09 --> 00:04:24,00
+in the next video.
+
