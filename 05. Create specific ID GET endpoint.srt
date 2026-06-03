@@ -1,0 +1,316 @@
+1
+00:00:00,05 --> 00:00:02,02
+- [Instructor] Okay, so now we'll continue
+
+2
+00:00:02,02 --> 00:00:05,09
+basically creating an endpoint to get a specific player
+
+3
+00:00:05,09 --> 00:00:08,04
+with an idea, same approach,
+
+4
+00:00:08,04 --> 00:00:10,03
+some little different nuances,
+
+5
+00:00:10,03 --> 00:00:13,02
+but in the end it's going to be more the same.
+
+6
+00:00:13,02 --> 00:00:15,09
+So let's go in the playerControllers.
+
+7
+00:00:15,09 --> 00:00:19,01
+So we're first going to create the controller.
+
+8
+00:00:19,01 --> 00:00:22,04
+So I'm going to go ahead and do as we've done in the past,
+
+9
+00:00:22,04 --> 00:00:24,04
+create a function,
+
+10
+00:00:24,04 --> 00:00:29,00
+getPlayerWithId.
+
+11
+00:00:29,00 --> 00:00:33,08
+And again, we're going to do an async function
+
+12
+00:00:33,08 --> 00:00:38,07
+req, res.
+
+13
+00:00:38,07 --> 00:00:43,02
+And we're going to try, and then I'm going to again,
+
+14
+00:00:43,02 --> 00:00:47,04
+copy and paste from the catch like so.
+
+15
+00:00:47,04 --> 00:00:49,01
+Be careful because when you create a try,
+
+16
+00:00:49,01 --> 00:00:51,00
+it already has the two curly braces.
+
+17
+00:00:51,00 --> 00:00:53,08
+So if you also copy that curly brace here,
+
+18
+00:00:53,08 --> 00:00:56,03
+you're going to have double and you're going to run into an error.
+
+19
+00:00:56,03 --> 00:00:58,05
+So I'm just going to copy just that.
+
+20
+00:00:58,05 --> 00:01:01,01
+And then we're going to go ahead
+
+21
+00:01:01,01 --> 00:01:04,04
+and create the function that's going to connect to Mongoose
+
+22
+00:01:04,04 --> 00:01:06,02
+and find a player idea.
+
+23
+00:01:06,02 --> 00:01:10,03
+So let's go ahead and get a new object
+
+24
+00:01:10,03 --> 00:01:15,06
+with a player and await response from Mongoose.
+
+25
+00:01:15,06 --> 00:01:18,05
+And we're going to use findByID.
+
+26
+00:01:18,05 --> 00:01:21,04
+If you start typing find, you're going to find
+
+27
+00:01:21,04 --> 00:01:23,06
+all the functions that are available through Mongoose.
+
+28
+00:01:23,06 --> 00:01:26,06
+So in this case, findById.
+
+29
+00:01:26,06 --> 00:01:29,07
+And what we need in this case is
+
+30
+00:01:29,07 --> 00:01:32,02
+to pass specific items.
+
+31
+00:01:32,02 --> 00:01:35,00
+So we need to pass an idea to get the actual player.
+
+32
+00:01:35,00 --> 00:01:39,04
+So in the params of the request,
+
+33
+00:01:39,04 --> 00:01:44,04
+we're going to have the PlayerId,
+
+34
+00:01:44,04 --> 00:01:48,00
+and then basically return like we've done before.
+
+35
+00:01:48,00 --> 00:01:52,08
+Res.json with a player,
+
+36
+00:01:52,08 --> 00:01:54,00
+and that's for a controller.
+
+37
+00:01:54,00 --> 00:01:56,06
+That's basically all we need for the controller.
+
+38
+00:01:56,06 --> 00:01:59,07
+Then we need to go in the routes and add this route too.
+
+39
+00:01:59,07 --> 00:02:04,02
+So we're going to again, import it here so the controller
+
+40
+00:02:04,02 --> 00:02:06,02
+getPlayerWithId,
+
+41
+00:02:06,02 --> 00:02:09,03
+and then we're going to create a new endpoint for this.
+
+42
+00:02:09,03 --> 00:02:11,06
+Because this particular endpoint wouldn't work,
+
+43
+00:02:11,06 --> 00:02:14,08
+'cause we need to pass something in that endpoint
+
+44
+00:02:14,08 --> 00:02:17,02
+to be able to return player.
+
+45
+00:02:17,02 --> 00:02:21,00
+So we're going to create a new endpoint altogether,
+
+46
+00:02:21,00 --> 00:02:24,00
+and this is going to be a new route
+
+47
+00:02:24,00 --> 00:02:26,03
+with a specific endpoint.
+
+48
+00:02:26,03 --> 00:02:29,02
+So it's going to be player
+
+49
+00:02:29,02 --> 00:02:33,09
+and in the paras we're going to pass the PlayerId,
+
+50
+00:02:33,09 --> 00:02:36,05
+which basically is taken by the controller
+
+51
+00:02:36,05 --> 00:02:39,01
+and then returning the data.
+
+52
+00:02:39,01 --> 00:02:42,05
+So we're going to create a get endpoint
+
+53
+00:02:42,05 --> 00:02:47,01
+and pass the controller, getPlayerWithId like so,
+
+54
+00:02:47,01 --> 00:02:52,00
+and Get specific player.
+
+55
+00:02:52,00 --> 00:02:54,00
+And that's basically what we need.
+
+56
+00:02:54,00 --> 00:02:59,03
+So now if we go into the same example,
+
+57
+00:02:59,03 --> 00:03:00,01
+we need an id.
+
+58
+00:03:00,01 --> 00:03:03,03
+So let's go ahead and grab the idea
+
+59
+00:03:03,03 --> 00:03:07,03
+from the actual database.
+
+60
+00:03:07,03 --> 00:03:12,02
+So we're going to go in Studio 3T, and I have here my idea.
+
+61
+00:03:12,02 --> 00:03:15,09
+So what I'm going to do is basically right click here,
+
+62
+00:03:15,09 --> 00:03:20,07
+copy the value as text, then I'm going to go and Postman.
+
+63
+00:03:20,07 --> 00:03:23,08
+And what I'm going to do here is not pass
+
+64
+00:03:23,08 --> 00:03:25,05
+anything in the bot here.
+
+65
+00:03:25,05 --> 00:03:27,03
+You can pass it in the params if you want,
+
+66
+00:03:27,03 --> 00:03:29,00
+but in this case I'm going to pass it directly
+
+67
+00:03:29,00 --> 00:03:31,00
+into the endpoint.
+
+68
+00:03:31,00 --> 00:03:32,09
+And remember, it's not players.
+
+69
+00:03:32,09 --> 00:03:38,01
+It's player/ and the id of the player.
+
+70
+00:03:38,01 --> 00:03:40,06
+So by doing this, I should get the specific player
+
+71
+00:03:40,06 --> 00:03:42,02
+that I've requested,
+
+72
+00:03:42,02 --> 00:03:45,07
+and in this case, the first one here that we're seeing.
+
+73
+00:03:45,07 --> 00:03:47,09
+So if I hit Send,
+
+74
+00:03:47,09 --> 00:03:51,00
+I got exactly that one player, the object.
+
+75
+00:03:51,00 --> 00:03:53,08
+So I could use this in the front end at this point
+
+76
+00:03:53,08 --> 00:03:56,02
+and basically play with this data.
+
+77
+00:03:56,02 --> 00:03:57,03
+So this completes how
+
+78
+00:03:57,03 --> 00:04:00,08
+to get a specific player passing an ID into the endpoint.
+
+79
+00:04:00,08 --> 00:04:02,00
+Let's move on.
+
