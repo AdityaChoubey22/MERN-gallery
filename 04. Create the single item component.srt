@@ -1,0 +1,420 @@
+1
+00:00:00,05 --> 00:00:03,04
+- [Instructor] Now let's add the code to the PlayerSingle.
+
+2
+00:00:03,04 --> 00:00:04,06
+So, the first thing we're going to do,
+
+3
+00:00:04,06 --> 00:00:08,00
+we're going to make sure that we pass the currentPlayer state
+
+4
+00:00:08,00 --> 00:00:10,08
+to the PlayerSingle.
+
+5
+00:00:10,08 --> 00:00:14,01
+So as you can see in the constructor, we have an object
+
+6
+00:00:14,01 --> 00:00:15,06
+that's called currentPlayer.
+
+7
+00:00:15,06 --> 00:00:19,03
+And as we click on the players, we're going to pass
+
+8
+00:00:19,03 --> 00:00:21,08
+who is this player to the currentPlayer
+
+9
+00:00:21,08 --> 00:00:26,02
+and then pass this down to the PlayerSingle.
+
+10
+00:00:26,02 --> 00:00:28,05
+So let's go ahead and make sure
+
+11
+00:00:28,05 --> 00:00:30,08
+that we are passing this prop.
+
+12
+00:00:30,08 --> 00:00:33,00
+So, we're going to do player
+
+13
+00:00:33,00 --> 00:00:40,00
+and we're going to pass this.state/currentPlayer like so.
+
+14
+00:00:40,00 --> 00:00:43,02
+Make sure you do dot and not forward slash.
+
+15
+00:00:43,02 --> 00:00:45,05
+Okay, we're going to save this
+
+16
+00:00:45,05 --> 00:00:48,08
+and then we're going to close this guy here,
+
+17
+00:00:48,08 --> 00:00:51,06
+close the App.jsx.
+
+18
+00:00:51,06 --> 00:00:55,03
+And now, we're going to go in the PlayerSingle
+
+19
+00:00:55,03 --> 00:00:57,06
+and do a lot of code here.
+
+20
+00:00:57,06 --> 00:01:00,07
+All right, so let's go and open PlayerSingle.
+
+21
+00:01:00,07 --> 00:01:02,07
+I'm going to close my explorer
+
+22
+00:01:02,07 --> 00:01:05,07
+and I'm going to start working
+
+23
+00:01:05,07 --> 00:01:08,09
+on this specific Player Single.
+
+24
+00:01:08,09 --> 00:01:11,02
+So, I'm going to remove the title here
+
+25
+00:01:11,02 --> 00:01:16,05
+and I'm going to start with a className of row.
+
+26
+00:01:16,05 --> 00:01:19,02
+And inside that className of row,
+
+27
+00:01:19,02 --> 00:01:21,02
+we're going to have another div
+
+28
+00:01:21,02 --> 00:01:25,09
+with a className of column s12.
+
+29
+00:01:25,09 --> 00:01:28,08
+So we're going to take full advantage of the width
+
+30
+00:01:28,08 --> 00:01:30,09
+of that particular row.
+
+31
+00:01:30,09 --> 00:01:35,00
+And then inside of that row, we're going to have a card.
+
+32
+00:01:35,00 --> 00:01:41,08
+So, let's go ahead and create a new div, className of card.
+
+33
+00:01:41,08 --> 00:01:44,07
+And these are all styles from Materialize,
+
+34
+00:01:44,07 --> 00:01:48,06
+the library that we installed earlier.
+
+35
+00:01:48,06 --> 00:01:56,00
+Another div with a className of card-image.
+
+36
+00:01:56,00 --> 00:01:59,02
+And inside of that card-image, we're going to have
+
+37
+00:01:59,02 --> 00:02:07,08
+an image first with a source of soccer.jpeg,
+
+38
+00:02:07,08 --> 00:02:12,06
+and while we're on the subject, I'm going to grab that image
+
+39
+00:02:12,06 --> 00:02:13,07
+from the resources.
+
+40
+00:02:13,07 --> 00:02:19,00
+So, if we go here in the Exercise Files,
+
+41
+00:02:19,00 --> 00:02:23,04
+you're going to have in the resources this image here.
+
+42
+00:02:23,04 --> 00:02:25,07
+So, we're going to copy that image
+
+43
+00:02:25,07 --> 00:02:30,05
+and we're going to put it in our project frontend
+
+44
+00:02:30,05 --> 00:02:34,04
+in public right here like so.
+
+45
+00:02:34,04 --> 00:02:39,08
+And you can delete the vite if you want while we're here.
+
+46
+00:02:39,08 --> 00:02:43,08
+Okay, and now that image is going to be available.
+
+47
+00:02:43,08 --> 00:02:47,04
+And remember when you do an image, you need to add an alt,
+
+48
+00:02:47,04 --> 00:02:51,06
+so Soccer Image if you want.
+
+49
+00:02:51,06 --> 00:02:54,03
+You can call it anything you want here.
+
+50
+00:02:54,03 --> 00:02:56,07
+And we're going to close out that tag.
+
+51
+00:02:56,07 --> 00:02:59,00
+And then we're going to have a span
+
+52
+00:02:59,00 --> 00:03:02,04
+for the title of the image.
+
+53
+00:03:02,04 --> 00:03:10,01
+So that span, which will have a className of card-title,
+
+54
+00:03:10,01 --> 00:03:11,08
+and you want to make sure you pass props
+
+55
+00:03:11,08 --> 00:03:15,05
+because we've passed from the state,
+
+56
+00:03:15,05 --> 00:03:19,00
+the currentPlayer, so we need to be able to use it now
+
+57
+00:03:19,00 --> 00:03:20,02
+from our props.
+
+58
+00:03:20,02 --> 00:03:27,00
+We're going to have player.firstName
+
+59
+00:03:27,00 --> 00:03:35,06
+and props.layer.lastName.
+
+60
+00:03:35,06 --> 00:03:38,04
+And again, if you're not sure what we've done,
+
+61
+00:03:38,04 --> 00:03:42,09
+you can go in here and you can go to the app
+
+62
+00:03:42,09 --> 00:03:44,06
+and you can take a look.
+
+63
+00:03:44,06 --> 00:03:47,03
+So we passed this prop as player.
+
+64
+00:03:47,03 --> 00:03:50,01
+So the currentPlayer is passed as a prop, as player
+
+65
+00:03:50,01 --> 00:03:51,01
+and not currentPlayer,
+
+66
+00:03:51,01 --> 00:03:54,03
+so that might be the confusion for some of you.
+
+67
+00:03:54,03 --> 00:03:57,04
+So if that's the case, you see what I've done here.
+
+68
+00:03:57,04 --> 00:03:59,06
+So, this is accurate here.
+
+69
+00:03:59,06 --> 00:04:04,03
+Okay, so now we have our span here. We're good to go.
+
+70
+00:04:04,03 --> 00:04:08,09
+Now we need to go out of that card-image
+
+71
+00:04:08,09 --> 00:04:11,08
+and create a new div.
+
+72
+00:04:11,08 --> 00:04:18,07
+And that new div is going to be className="card-content".
+
+73
+00:04:18,07 --> 00:04:20,07
+And then inside of that card-content,
+
+74
+00:04:20,07 --> 00:04:21,08
+we're going to have a few things.
+
+75
+00:04:21,08 --> 00:04:26,01
+So, the first one is going to be a p tag,
+
+76
+00:04:26,01 --> 00:04:30,08
+which we'll do Phone, and then we're going to have
+
+77
+00:04:30,08 --> 00:04:37,03
+props.player.phone, then dash Email.
+
+78
+00:04:37,03 --> 00:04:39,03
+So basically, we're building out all the data
+
+79
+00:04:39,03 --> 00:04:43,08
+that we have available inside of our player.
+
+80
+00:04:43,08 --> 00:04:46,09
+So as you can remember, when we set our schema,
+
+81
+00:04:46,09 --> 00:04:50,03
+we have several things that we have access to.
+
+82
+00:04:50,03 --> 00:04:53,06
+Then we're going to add another line.
+
+83
+00:04:53,06 --> 00:04:58,04
+So, another p tag on this area.
+
+84
+00:04:58,04 --> 00:05:03,01
+We're going to add Strength, and I'm going to copy and paste
+
+85
+00:05:03,01 --> 00:05:06,05
+to just speed up the typing.
+
+86
+00:05:06,05 --> 00:05:07,05
+So, props.
+
+87
+00:05:07,05 --> 00:05:11,05
+On this one, we're going to go for strength,
+
+88
+00:05:11,05 --> 00:05:16,01
+and then we're going to do Endurance.
+
+89
+00:05:16,01 --> 00:05:21,03
+And then this one, we're going to do endurance.
+
+90
+00:05:21,03 --> 00:05:23,05
+And then you can continue with all the skill sets
+
+91
+00:05:23,05 --> 00:05:25,05
+that we added to the database.
+
+92
+00:05:25,05 --> 00:05:27,07
+So, I'm not going to do all of 'em,
+
+93
+00:05:27,07 --> 00:05:30,00
+but you could do every single one of 'em.
+
+94
+00:05:30,00 --> 00:05:32,05
+So, it's basically a repeat of all the skill sets
+
+95
+00:05:32,05 --> 00:05:34,03
+that we added into the database.
+
+96
+00:05:34,03 --> 00:05:38,02
+You can do props, agility, and so on, so forth.
+
+97
+00:05:38,02 --> 00:05:42,02
+So, feel free to continue and finish this off if you want.
+
+98
+00:05:42,02 --> 00:05:46,08
+So I'm just going to complete the SinglePlayer
+
+99
+00:05:46,08 --> 00:05:50,07
+by doing card-action.
+
+100
+00:05:50,07 --> 00:05:57,04
+And the card-action is going to be Team and team.
+
+101
+00:05:57,04 --> 00:05:58,03
+Okay?
+
+102
+00:05:58,03 --> 00:06:00,00
+So that's pretty much what we need to do
+
+103
+00:06:00,00 --> 00:06:03,03
+for the PlayerSingle, so I'm going to save this
+
+104
+00:06:03,03 --> 00:06:07,03
+and we're going to continue finishing our application
+
+105
+00:06:07,03 --> 00:06:09,00
+in the next few videos.
+
