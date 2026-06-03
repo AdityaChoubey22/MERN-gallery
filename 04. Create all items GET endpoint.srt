@@ -1,0 +1,380 @@
+1
+00:00:00,05 --> 00:00:02,01
+- [Instructor] Now let's work on the get end point,
+
+2
+00:00:02,01 --> 00:00:05,01
+which will allow us to get all of our players.
+
+3
+00:00:05,01 --> 00:00:07,08
+So we're going to be working on the same files for a while.
+
+4
+00:00:07,08 --> 00:00:10,01
+So playerController and soccerRoutes.
+
+5
+00:00:10,01 --> 00:00:13,02
+So I'm going to open those two files
+
+6
+00:00:13,02 --> 00:00:15,04
+and just close my Explorer.
+
+7
+00:00:15,04 --> 00:00:16,07
+So basically the next one that we need
+
+8
+00:00:16,07 --> 00:00:21,05
+to do in the playerControllers is the get player.
+
+9
+00:00:21,05 --> 00:00:25,02
+So we're going to basically do a function
+
+10
+00:00:25,02 --> 00:00:29,04
+that will be called getPlayers.
+
+11
+00:00:29,04 --> 00:00:33,06
+So we can query the database and get all of our players.
+
+12
+00:00:33,06 --> 00:00:37,05
+So we're going to use, again, the async approach
+
+13
+00:00:37,05 --> 00:00:41,05
+with our request, response.
+
+14
+00:00:41,05 --> 00:00:44,00
+And then let's go ahead
+
+15
+00:00:44,00 --> 00:00:47,07
+and try to do this.
+
+16
+00:00:47,07 --> 00:00:52,08
+And then we can actually copy the exact same code here.
+
+17
+00:00:52,08 --> 00:00:55,03
+If there's an error, catch the error, right?
+
+18
+00:00:55,03 --> 00:00:59,03
+So, okay, so in the try we're going
+
+19
+00:00:59,03 --> 00:01:03,03
+to create an array
+
+20
+00:01:03,03 --> 00:01:07,02
+that will have whatever players we have inside
+
+21
+00:01:07,02 --> 00:01:09,01
+of our database.
+
+22
+00:01:09,01 --> 00:01:12,02
+So we're going to use the find command,
+
+23
+00:01:12,02 --> 00:01:15,03
+and we're not going to pass anything in that find command.
+
+24
+00:01:15,03 --> 00:01:19,05
+And then we're going to do the response with the players
+
+25
+00:01:19,05 --> 00:01:20,08
+that we get.
+
+26
+00:01:20,08 --> 00:01:22,08
+As simple as this.
+
+27
+00:01:22,08 --> 00:01:23,08
+There's no fluff.
+
+28
+00:01:23,08 --> 00:01:25,06
+That's basically all that we need
+
+29
+00:01:25,06 --> 00:01:27,03
+for that controller.
+
+30
+00:01:27,03 --> 00:01:30,04
+So now we're going to need to pass that controller inside
+
+31
+00:01:30,04 --> 00:01:33,04
+of the route so we can execute it
+
+32
+00:01:33,04 --> 00:01:34,08
+with the particular endpoint
+
+33
+00:01:34,08 --> 00:01:36,08
+that we're going to create for that.
+
+34
+00:01:36,08 --> 00:01:38,01
+So let's go ahead
+
+35
+00:01:38,01 --> 00:01:43,07
+and make sure we have a comma, getPlayers.
+
+36
+00:01:43,07 --> 00:01:49,05
+And then we're going to create a get endpoint,
+
+37
+00:01:49,05 --> 00:01:51,09
+which will use the same player.
+
+38
+00:01:51,09 --> 00:01:56,01
+So we're going to use the get method with the same endpoint,
+
+39
+00:01:56,01 --> 00:01:57,00
+which is players,
+
+40
+00:01:57,00 --> 00:02:00,04
+and pass the controller getPlayers.
+
+41
+00:02:00,04 --> 00:02:02,09
+And this is how simple it gets.
+
+42
+00:02:02,09 --> 00:02:06,01
+So let's just make sure we put some notes here,
+
+43
+00:02:06,01 --> 00:02:10,01
+get endpoint, if you want to take some notes.
+
+44
+00:02:10,01 --> 00:02:14,02
+Is this is your first time to do a full MERN application,
+
+45
+00:02:14,02 --> 00:02:17,04
+putting some notes down might actually be a good idea
+
+46
+00:02:17,04 --> 00:02:18,05
+just to give you an idea
+
+47
+00:02:18,05 --> 00:02:20,03
+of what you can do afterwards
+
+48
+00:02:20,03 --> 00:02:22,00
+when you build your own application.
+
+49
+00:02:22,00 --> 00:02:24,01
+So just as a refresher,
+
+50
+00:02:24,01 --> 00:02:28,04
+we're importing the playerController that we just created.
+
+51
+00:02:28,04 --> 00:02:30,03
+We're exporting it here.
+
+52
+00:02:30,03 --> 00:02:31,08
+We're basically going
+
+53
+00:02:31,08 --> 00:02:36,03
+into the Mongo database using mongos
+
+54
+00:02:36,03 --> 00:02:38,04
+and trying to find all the players.
+
+55
+00:02:38,04 --> 00:02:42,07
+And then basically returning the response with the array
+
+56
+00:02:42,07 --> 00:02:44,00
+of players that we have.
+
+57
+00:02:44,00 --> 00:02:46,01
+Otherwise give an error.
+
+58
+00:02:46,01 --> 00:02:50,03
+And then we're using this route with a get method
+
+59
+00:02:50,03 --> 00:02:52,01
+to get all the players.
+
+60
+00:02:52,01 --> 00:02:54,09
+So what I'm going to do is save this,
+
+61
+00:02:54,09 --> 00:02:56,09
+'cause this is basically our code.
+
+62
+00:02:56,09 --> 00:02:59,02
+Want to make sure our server is still running.
+
+63
+00:02:59,02 --> 00:03:01,00
+Yep, and there's no error.
+
+64
+00:03:01,00 --> 00:03:03,00
+I'm just going to minimize this.
+
+65
+00:03:03,00 --> 00:03:08,03
+And the first thing I'm going to do is go inside Postman here,
+
+66
+00:03:08,03 --> 00:03:10,03
+and I'm going to create a bunch of other players
+
+67
+00:03:10,03 --> 00:03:11,07
+with the same data here.
+
+68
+00:03:11,07 --> 00:03:18,04
+So I'm going to create Manuello, Henrietto
+
+69
+00:03:18,04 --> 00:03:21,09
+and then change this to 5 so I have different data,
+
+70
+00:03:21,09 --> 00:03:25,00
+and maybe have another key here
+
+71
+00:03:25,00 --> 00:03:28,02
+where it could be tactical.
+
+72
+00:03:28,02 --> 00:03:32,01
+And then put a one.
+
+73
+00:03:32,01 --> 00:03:34,09
+And then send this, get a response back.
+
+74
+00:03:34,09 --> 00:03:36,06
+We have another player.
+
+75
+00:03:36,06 --> 00:03:40,00
+And I'm going to again do another one here.
+
+76
+00:03:40,00 --> 00:03:41,07
+So Henri, Manuel,
+
+77
+00:03:41,07 --> 00:03:44,09
+I'm going to reverse my first name, last name,
+
+78
+00:03:44,09 --> 00:03:48,09
+change me2@me.com
+
+79
+00:03:48,09 --> 00:03:50,02
+and put a 6 here.
+
+80
+00:03:50,02 --> 00:03:53,00
+And just send this again.
+
+81
+00:03:53,00 --> 00:03:59,00
+So basically now if we remove all these items,
+
+82
+00:03:59,00 --> 00:04:01,01
+'cause we don't need anything in the body
+
+83
+00:04:01,01 --> 00:04:03,03
+to do a get request,
+
+84
+00:04:03,03 --> 00:04:05,08
+and we do a get request
+
+85
+00:04:05,08 --> 00:04:09,01
+with the player's endpoint, same endpoint,
+
+86
+00:04:09,01 --> 00:04:12,06
+we're going to have an array of responses here.
+
+87
+00:04:12,06 --> 00:04:14,04
+And if you want to check even further,
+
+88
+00:04:14,04 --> 00:04:18,05
+you can go into Studio 3T, do another search,
+
+89
+00:04:18,05 --> 00:04:22,03
+and you'll see that we have three different players, right?
+
+90
+00:04:22,03 --> 00:04:24,08
+So you know that everything is working
+
+91
+00:04:24,08 --> 00:04:27,08
+as it should based on these tests.
+
+92
+00:04:27,08 --> 00:04:31,09
+So once we actually use the get endpoint from the frontend,
+
+93
+00:04:31,09 --> 00:04:34,02
+which is going to be the React application,
+
+94
+00:04:34,02 --> 00:04:37,08
+we're going to get this data returned to us as a JSON.
+
+95
+00:04:37,08 --> 00:04:42,00
+So we got our get endpoint, let's move on.
+
