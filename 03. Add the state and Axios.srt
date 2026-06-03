@@ -1,0 +1,632 @@
+1
+00:00:00,04 --> 00:00:01,05
+- [Instructor] Okay, so let's work
+
+2
+00:00:01,05 --> 00:00:04,05
+on the listing of our players component.
+
+3
+00:00:04,05 --> 00:00:08,01
+So the first thing I'm going to do is go inside of my terminal
+
+4
+00:00:08,01 --> 00:00:09,09
+and stop the server.
+
+5
+00:00:09,09 --> 00:00:13,07
+So I'm going to delete this front end here,
+
+6
+00:00:13,07 --> 00:00:18,09
+and I'm going to, basically, start it over
+
+7
+00:00:18,09 --> 00:00:20,09
+and make sure I'm on the front end
+
+8
+00:00:20,09 --> 00:00:23,01
+and I'm going to install Axios.
+
+9
+00:00:23,01 --> 00:00:29,03
+So Axios Is going to be used to query the back end server,
+
+10
+00:00:29,03 --> 00:00:33,04
+npm install Axios, and you want to make sure
+
+11
+00:00:33,04 --> 00:00:36,04
+you're on the front end, FYI, 'cause if you install this
+
+12
+00:00:36,04 --> 00:00:38,06
+at the root directory, you're going to install it
+
+13
+00:00:38,06 --> 00:00:40,01
+in the wrong directory.
+
+14
+00:00:40,01 --> 00:00:42,07
+You're going to have, basically a package.JSON.
+
+15
+00:00:42,07 --> 00:00:44,04
+Here, you shouldn't have that.
+
+16
+00:00:44,04 --> 00:00:49,09
+So make sure you're in the front end and install Axios.
+
+17
+00:00:49,09 --> 00:00:53,05
+When this is done, you can start the server again
+
+18
+00:00:53,05 --> 00:00:57,03
+so we can see what we're doing, and then minimize this again
+
+19
+00:00:57,03 --> 00:00:59,09
+just to get it out of the way.
+
+20
+00:00:59,09 --> 00:01:01,02
+All right, so the first thing,
+
+21
+00:01:01,02 --> 00:01:04,00
+we're going to start adding some code
+
+22
+00:01:04,00 --> 00:01:08,01
+and the app will get back to the player list after.
+
+23
+00:01:08,01 --> 00:01:12,01
+So what I'm going to do first is make sure that
+
+24
+00:01:12,01 --> 00:01:17,01
+I have the state initiated in my class component.
+
+25
+00:01:17,01 --> 00:01:19,03
+So just above the render,
+
+26
+00:01:19,03 --> 00:01:25,03
+I'm going to add a constructor with props
+
+27
+00:01:25,03 --> 00:01:27,08
+and initiate my state right here.
+
+28
+00:01:27,08 --> 00:01:30,02
+So let's go ahead and do this,
+
+29
+00:01:30,02 --> 00:01:39,09
+props and this.state = players,
+
+30
+00:01:39,09 --> 00:01:44,03
+which will be an array, and then currentPlayer,
+
+31
+00:01:44,03 --> 00:01:46,04
+which we'll need when we select a player.
+
+32
+00:01:46,04 --> 00:01:50,06
+We'll need a current player, which will be an object,
+
+33
+00:01:50,06 --> 00:01:52,06
+and this is all we need.
+
+34
+00:01:52,06 --> 00:01:57,09
+Now, what we need, first, again, above the render,
+
+35
+00:01:57,09 --> 00:02:03,04
+we need to have this function
+
+36
+00:02:03,04 --> 00:02:05,09
+that will, basically, use Axios,
+
+37
+00:02:05,09 --> 00:02:07,08
+and then we should actually import it
+
+38
+00:02:07,08 --> 00:02:14,00
+while we're thinking about it from 'axios',
+
+39
+00:02:14,00 --> 00:02:17,07
+so when the component did mount,
+
+40
+00:02:17,07 --> 00:02:21,09
+we need to get the list of players from the backend.
+
+41
+00:02:21,09 --> 00:02:24,03
+So what we're going to do is, first of all,
+
+42
+00:02:24,03 --> 00:02:28,05
+I'm going to create a variable with the URL of our server.
+
+43
+00:02:28,05 --> 00:02:29,07
+So this could be anything.
+
+44
+00:02:29,07 --> 00:02:32,07
+So if you're building your server in the cloud,
+
+45
+00:02:32,07 --> 00:02:35,01
+you want to make sure you have the right URL here,
+
+46
+00:02:35,01 --> 00:02:38,06
+but since we're doing this locally,
+
+47
+00:02:38,06 --> 00:02:45,07
+this is going to be my URL and players.
+
+48
+00:02:45,07 --> 00:02:50,03
+So this is where we're going to use that URL
+
+49
+00:02:50,03 --> 00:02:51,06
+to load the players.
+
+50
+00:02:51,06 --> 00:02:55,03
+So we're going to call into our API or endpoint
+
+51
+00:02:55,03 --> 00:02:58,07
+that we've created with the backend
+
+52
+00:02:58,07 --> 00:03:04,09
+and use Axios to get the data from our backend.
+
+53
+00:03:04,09 --> 00:03:12,03
+So get from the URL, and then with the response
+
+54
+00:03:12,03 --> 00:03:16,02
+from the server, which, as you remember,
+
+55
+00:03:16,02 --> 00:03:20,02
+will return an array, do this.
+
+56
+00:03:20,02 --> 00:03:25,08
+So we're going to set the state.
+
+57
+00:03:25,08 --> 00:03:29,07
+So we're going to update the state with the players,
+
+58
+00:03:29,07 --> 00:03:33,01
+So the players, that, now, is an empty array.
+
+59
+00:03:33,01 --> 00:03:36,04
+In our constructor, we're going to pass
+
+60
+00:03:36,04 --> 00:03:39,01
+the data from the response.
+
+61
+00:03:39,01 --> 00:03:42,01
+So whatever is the data or, basically, the array
+
+62
+00:03:42,01 --> 00:03:46,00
+that we receive from the backend server,
+
+63
+00:03:46,00 --> 00:03:51,03
+go ahead and update our state right here.
+
+64
+00:03:51,03 --> 00:03:53,02
+So now, we're going to have an array
+
+65
+00:03:53,02 --> 00:03:55,07
+with multiple players, right?
+
+66
+00:03:55,07 --> 00:04:03,05
+So now, again, we need to catch if there's an error
+
+67
+00:04:03,05 --> 00:04:06,07
+and catch the error like so.
+
+68
+00:04:06,07 --> 00:04:09,03
+So if there's an error, pass it to the console log,
+
+69
+00:04:09,03 --> 00:04:11,03
+and let me know what's happening here.
+
+70
+00:04:11,03 --> 00:04:14,02
+All right, so now we need to use this, right?
+
+71
+00:04:14,02 --> 00:04:16,09
+So we need to pass it to something,
+
+72
+00:04:16,09 --> 00:04:20,05
+and then we're going to update that component accordingly.
+
+73
+00:04:20,05 --> 00:04:22,05
+So in this case, what we want to do
+
+74
+00:04:22,05 --> 00:04:28,03
+is pass a prop of players from the state,
+
+75
+00:04:28,03 --> 00:04:32,00
+this.state.players.
+
+76
+00:04:32,00 --> 00:04:35,09
+So now, in this player list, we're going to have access
+
+77
+00:04:35,09 --> 00:04:39,06
+to this prop that we've passed from the state.
+
+78
+00:04:39,06 --> 00:04:42,08
+So let's save this, and now, we're going to go
+
+79
+00:04:42,08 --> 00:04:45,00
+inside of our player.
+
+80
+00:04:45,00 --> 00:04:47,05
+Your application, it actually should run properly
+
+81
+00:04:47,05 --> 00:04:49,07
+'cause you're passing it properly here,
+
+82
+00:04:49,07 --> 00:04:52,08
+and you're not using it on the player list
+
+83
+00:04:52,08 --> 00:04:55,00
+or we're going to update the player list
+
+84
+00:04:55,00 --> 00:04:57,04
+accordingly as well,
+
+85
+00:04:57,04 --> 00:04:59,09
+and what we're going to do, instead of doing player list,
+
+86
+00:04:59,09 --> 00:05:01,06
+we're going to change this
+
+87
+00:05:01,06 --> 00:05:04,06
+to leverage what we got from our props,
+
+88
+00:05:04,06 --> 00:05:06,05
+and you want to make sure you pass props here
+
+89
+00:05:06,05 --> 00:05:09,05
+'cause, otherwise, you're not going to have access to this.
+
+90
+00:05:09,05 --> 00:05:16,02
+All right, now, what we're going to do is use a ul,
+
+91
+00:05:16,02 --> 00:05:20,06
+and we're going to pass a few things from materialize,
+
+92
+00:05:20,06 --> 00:05:26,07
+which is a collection with-header,
+
+93
+00:05:26,07 --> 00:05:36,08
+and we're going to have an li class name collection-header,
+
+94
+00:05:36,08 --> 00:05:41,01
+and this is going to be Players,
+
+95
+00:05:41,01 --> 00:05:43,06
+and this is where we're going to pass what we need.
+
+96
+00:05:43,06 --> 00:05:48,07
+Okay, so here, we need to leverage the props,
+
+97
+00:05:48,07 --> 00:05:50,04
+which is players.
+
+98
+00:05:50,04 --> 00:05:53,08
+So we have the props, which is players,
+
+99
+00:05:53,08 --> 00:05:55,08
+and we're going to map it.
+
+100
+00:05:55,08 --> 00:06:00,07
+So for each item, you're going to do this.
+
+101
+00:06:00,07 --> 00:06:07,03
+We're going to have an href, so we'll use this,
+
+102
+00:06:07,03 --> 00:06:11,09
+className="collection-item",
+
+103
+00:06:11,09 --> 00:06:13,09
+and we're going to need to pass a unique key.
+
+104
+00:06:13,09 --> 00:06:19,01
+So the unique key will be the item.id,
+
+105
+00:06:19,01 --> 00:06:22,08
+and then we're going to need to close this, actually,
+
+106
+00:06:22,08 --> 00:06:28,09
+so close this href, which we haven't done like so,
+
+107
+00:06:28,09 --> 00:06:31,04
+and inside of that link,
+
+108
+00:06:31,04 --> 00:06:36,04
+we're going to have the item.firstName.
+
+109
+00:06:36,04 --> 00:06:39,06
+Remember, our database has a first name,
+
+110
+00:06:39,06 --> 00:06:45,05
+space item.lastName,
+
+111
+00:06:45,05 --> 00:06:48,07
+and the other thing that we're going to do
+
+112
+00:06:48,07 --> 00:06:52,01
+is pass a function, eventually.
+
+113
+00:06:52,01 --> 00:06:54,08
+So what I'm going to do is, just for now,
+
+114
+00:06:54,08 --> 00:06:56,05
+I'm going to create the function
+
+115
+00:06:56,05 --> 00:07:00,08
+in the app here very quickly.
+
+116
+00:07:00,08 --> 00:07:04,03
+So below the component that mount,
+
+117
+00:07:04,03 --> 00:07:13,04
+I'm going to create a updateCurrentPlayer with an item,
+
+118
+00:07:13,04 --> 00:07:18,00
+and I'm going to set the state
+
+119
+00:07:18,00 --> 00:07:22,08
+with the currentPlayer with the item,
+
+120
+00:07:22,08 --> 00:07:26,05
+and I'm going to pass this function as well here.
+
+121
+00:07:26,05 --> 00:07:32,01
+So let's do a return on here
+
+122
+00:07:32,01 --> 00:07:33,02
+like this.
+
+123
+00:07:33,02 --> 00:07:35,01
+So you want to be in the player list component
+
+124
+00:07:35,01 --> 00:07:38,04
+'cause we're going to pass this function to the component,
+
+125
+00:07:38,04 --> 00:07:44,09
+updateCurrentPlayer={this.UpdateCurrentPlayer}, okay.
+
+126
+00:07:44,09 --> 00:07:47,02
+So this is all going to make sense later.
+
+127
+00:07:47,02 --> 00:07:49,09
+I'm going to explain it in the future,
+
+128
+00:07:49,09 --> 00:07:52,02
+but this function will allow us to update
+
+129
+00:07:52,02 --> 00:07:55,02
+who is the current player that will be displayed
+
+130
+00:07:55,02 --> 00:07:57,05
+in the player single.
+
+131
+00:07:57,05 --> 00:08:00,02
+So for now, I'm just passing the function here,
+
+132
+00:08:00,02 --> 00:08:03,02
+and I'm going to use it here as well.
+
+133
+00:08:03,02 --> 00:08:07,05
+So there's a lot that's happening in this particular video,
+
+134
+00:08:07,05 --> 00:08:09,09
+but all of it is going to make sense
+
+135
+00:08:09,09 --> 00:08:12,06
+as we finish our other components,
+
+136
+00:08:12,06 --> 00:08:16,07
+and, actually, here on the link, you want to make sure
+
+137
+00:08:16,07 --> 00:08:20,01
+you're inside of the A tag here.
+
+138
+00:08:20,01 --> 00:08:23,09
+So make sure you're before here,
+
+139
+00:08:23,09 --> 00:08:27,01
+and you can return this if you want to have more space.
+
+140
+00:08:27,01 --> 00:08:30,00
+We're going to add an onClick
+
+141
+00:08:30,00 --> 00:08:37,00
+and pass the props.updateCurrentPlayer,
+
+142
+00:08:37,00 --> 00:08:39,06
+and we're going to bind this function,
+
+143
+00:08:39,06 --> 00:08:47,00
+and we're going to pass this.item as the current player.
+
+144
+00:08:47,00 --> 00:08:48,04
+Okay, perfect.
+
+145
+00:08:48,04 --> 00:08:51,00
+So that completes this particular part.
+
+146
+00:08:51,00 --> 00:08:54,01
+As you can see, everything is working properly.
+
+147
+00:08:54,01 --> 00:08:57,03
+If you want to go and check the application,
+
+148
+00:08:57,03 --> 00:08:59,07
+right now, it isn't working properly
+
+149
+00:08:59,07 --> 00:09:02,03
+'cause there are things missing in the application,
+
+150
+00:09:02,03 --> 00:09:04,03
+which is normal,
+
+151
+00:09:04,03 --> 00:09:06,07
+and if there's anything else that's not working,
+
+152
+00:09:06,07 --> 00:09:08,02
+and you can see that everything,
+
+153
+00:09:08,02 --> 00:09:10,01
+so far, we've done, is working.
+
+154
+00:09:10,01 --> 00:09:13,02
+All of these, don't worry about it, it's okay,
+
+155
+00:09:13,02 --> 00:09:16,05
+and what we're going to do is as we complete
+
+156
+00:09:16,05 --> 00:09:18,03
+the other parts of the application,
+
+157
+00:09:18,03 --> 00:09:19,09
+all of this is going to work.
+
+158
+00:09:19,09 --> 00:09:21,00
+Let's move on.
+
