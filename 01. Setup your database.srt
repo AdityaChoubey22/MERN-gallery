@@ -1,0 +1,276 @@
+1
+00:00:00,04 --> 00:00:02,02
+- [Instructor] We are now ready to set up our database
+
+2
+00:00:02,02 --> 00:00:05,04
+inside of our API, so let's get to it.
+
+3
+00:00:05,04 --> 00:00:08,02
+So let's close these files for now,
+
+4
+00:00:08,02 --> 00:00:11,04
+and what we're going to do is load the index.js
+
+5
+00:00:11,04 --> 00:00:12,09
+and I'm going to close the explorer
+
+6
+00:00:12,09 --> 00:00:15,04
+just to have a little bit more screen here,
+
+7
+00:00:15,04 --> 00:00:20,05
+and what I'm going to do now is import mongoose first,
+
+8
+00:00:20,05 --> 00:00:22,07
+which are going to be the tool that we're going to use
+
+9
+00:00:22,07 --> 00:00:25,03
+to do transactions with our MongoDB.
+
+10
+00:00:25,03 --> 00:00:30,01
+It simplifies the syntax versus doing straight command
+
+11
+00:00:30,01 --> 00:00:32,06
+to the Mongo server.
+
+12
+00:00:32,06 --> 00:00:40,01
+We're also going to import bodyparser.
+
+13
+00:00:40,01 --> 00:00:44,01
+We're going to import cors from cors,
+
+14
+00:00:44,01 --> 00:00:47,02
+and cors allows us to do transactions
+
+15
+00:00:47,02 --> 00:00:48,09
+with different domains.
+
+16
+00:00:48,09 --> 00:00:52,02
+So basically cross-transactional.
+
+17
+00:00:52,02 --> 00:00:56,00
+So if you're having issues doing specific transactions
+
+18
+00:00:56,00 --> 00:00:58,02
+with a backend, that's usually one of the issue.
+
+19
+00:00:58,02 --> 00:01:00,00
+You can read more on cors online
+
+20
+00:01:00,00 --> 00:01:02,01
+if you want to research it.
+
+21
+00:01:02,01 --> 00:01:04,07
+And we're going to set up our routes right away.
+
+22
+00:01:04,07 --> 00:01:07,07
+One thing that is certain is once we import our routes
+
+23
+00:01:07,07 --> 00:01:10,07
+inside the index.js file,
+
+24
+00:01:10,07 --> 00:01:13,04
+and we haven't set up any routes yet,
+
+25
+00:01:13,04 --> 00:01:15,02
+A, it's going to break the application,
+
+26
+00:01:15,02 --> 00:01:17,01
+but we'll get to that soon.
+
+27
+00:01:17,01 --> 00:01:24,01
+So I'm going to import from routes and soccerroutes.
+
+28
+00:01:24,01 --> 00:01:27,01
+Okay, now the next thing we're going to set
+
+29
+00:01:27,01 --> 00:01:29,02
+is our Mongo connection.
+
+30
+00:01:29,02 --> 00:01:30,09
+So I'm just going to write a little note
+
+31
+00:01:30,09 --> 00:01:33,05
+for your own purposes.
+
+32
+00:01:33,05 --> 00:01:36,00
+Mongo connection,
+
+33
+00:01:36,00 --> 00:01:43,01
+and I'm going to use mongoose with a promise,
+
+34
+00:01:43,01 --> 00:01:46,06
+which will be a global promise,
+
+35
+00:01:46,06 --> 00:01:49,06
+and then I'm going to connect
+
+36
+00:01:49,06 --> 00:01:54,08
+using that promise to our MongoDB.
+
+37
+00:01:54,08 --> 00:01:57,08
+And if you remember localhost,
+
+38
+00:01:57,08 --> 00:02:00,03
+you may need to put the port in certain cases,
+
+39
+00:02:00,03 --> 00:02:03,06
+but in most cases, it's going to know for a default
+
+40
+00:02:03,06 --> 00:02:06,06
+that it's the Port 27017.
+
+41
+00:02:06,06 --> 00:02:09,04
+So in this case, we don't have to put it.
+
+42
+00:02:09,04 --> 00:02:13,01
+And I'm going to create a soccerdb.
+
+43
+00:02:13,01 --> 00:02:18,05
+I'm also going to set my bodyparser right away.
+
+44
+00:02:18,05 --> 00:02:25,09
+I'm going to app use bodyparser, urlencoded.
+
+45
+00:02:25,09 --> 00:02:33,04
+So this is to parse what we're receiving from our request,
+
+46
+00:02:33,04 --> 00:02:39,08
+so to allow our request to pass through and parsed.
+
+47
+00:02:39,08 --> 00:02:43,02
+And then what we're going to use is json.
+
+48
+00:02:43,02 --> 00:02:48,08
+So we're going to set that up right here, json.
+
+49
+00:02:48,08 --> 00:02:52,09
+And then finally, we're going to set up our cors.
+
+50
+00:02:52,09 --> 00:03:04,01
+So app use cors and pass the routes to the app.
+
+51
+00:03:04,01 --> 00:03:05,02
+Perfect.
+
+52
+00:03:05,02 --> 00:03:06,07
+So let's go into our terminal.
+
+53
+00:03:06,07 --> 00:03:10,08
+So create a new terminal, and also you want to make sure
+
+54
+00:03:10,08 --> 00:03:13,05
+that the terminal you're running is in the backend again,
+
+55
+00:03:13,05 --> 00:03:17,08
+because if we do it ls, we're at the top directory.
+
+56
+00:03:17,08 --> 00:03:20,02
+So cd backend.
+
+57
+00:03:20,02 --> 00:03:22,07
+And if we run the server right now, it's going to break,
+
+58
+00:03:22,07 --> 00:03:24,04
+and the reason is because we have routes
+
+59
+00:03:24,04 --> 00:03:25,08
+that are passed through the app,
+
+60
+00:03:25,08 --> 00:03:27,06
+but our routes are not defined yet.
+
+61
+00:03:27,06 --> 00:03:31,09
+So if you run this, it's going to give you a bunch of errors.
+
+62
+00:03:31,09 --> 00:03:34,04
+So for the time being, if you want to run the server
+
+63
+00:03:34,04 --> 00:03:36,08
+and make sure everything runs properly
+
+64
+00:03:36,08 --> 00:03:38,03
+before we set up our routes,
+
+65
+00:03:38,03 --> 00:03:42,08
+all you have to do is comment this line here, save it,
+
+66
+00:03:42,08 --> 00:03:45,03
+and the server is running on port 4000,
+
+67
+00:03:45,03 --> 00:03:48,00
+that means that everything is running properly,
+
+68
+00:03:48,00 --> 00:03:50,08
+the connection to Mongo has worked,
+
+69
+00:03:50,08 --> 00:03:53,00
+so you're all good to go.
+
