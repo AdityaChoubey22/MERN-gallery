@@ -1,0 +1,532 @@
+1
+00:00:00,05 --> 00:00:03,04
+- [Instructor] Okay, so we're going to do a few fixes
+
+2
+00:00:03,04 --> 00:00:04,05
+in the application just
+
+3
+00:00:04,05 --> 00:00:07,00
+to make sure everything works properly.
+
+4
+00:00:07,00 --> 00:00:10,04
+As a developer, it's important to understand
+
+5
+00:00:10,04 --> 00:00:13,05
+or see that you're not alone when you're doing typos,
+
+6
+00:00:13,05 --> 00:00:15,05
+you're doing little mistakes here and there,
+
+7
+00:00:15,05 --> 00:00:17,02
+and it happens to me too.
+
+8
+00:00:17,02 --> 00:00:19,03
+So I want to go through the exercise
+
+9
+00:00:19,03 --> 00:00:22,02
+of figuring those things out together.
+
+10
+00:00:22,02 --> 00:00:26,01
+So right now, let's go back to here.
+
+11
+00:00:26,01 --> 00:00:28,04
+Let's reload this.
+
+12
+00:00:28,04 --> 00:00:31,05
+And there's a few things that we can see that are wrong.
+
+13
+00:00:31,05 --> 00:00:33,06
+So this is the string ref.
+
+14
+00:00:33,06 --> 00:00:35,09
+You can read on it here and make the changes.
+
+15
+00:00:35,09 --> 00:00:39,06
+It's not a big issue, but if you want to fix it,
+
+16
+00:00:39,06 --> 00:00:41,05
+you can fix that one.
+
+17
+00:00:41,05 --> 00:00:42,07
+The first thing that I need
+
+18
+00:00:42,07 --> 00:00:47,01
+to fix here is the unique key prop for PlayerList.
+
+19
+00:00:47,01 --> 00:00:51,02
+So let's go in PlayerList and take a look at what that is.
+
+20
+00:00:51,02 --> 00:00:56,09
+Let's go here and go in PlayerList.
+
+21
+00:00:56,09 --> 00:01:03,02
+And here, what I'm doing is .id, but it's _id.
+
+22
+00:01:03,02 --> 00:01:06,03
+That's what I get back from the actual database.
+
+23
+00:01:06,03 --> 00:01:09,08
+So that would fix the first thing that we have.
+
+24
+00:01:09,08 --> 00:01:13,07
+Now when we update the player right now,
+
+25
+00:01:13,07 --> 00:01:15,03
+something's not working here.
+
+26
+00:01:15,03 --> 00:01:17,08
+So when we click on the application,
+
+27
+00:01:17,08 --> 00:01:20,06
+if you go here and I close this.
+
+28
+00:01:20,06 --> 00:01:24,02
+And I try to load my players here as the current player.
+
+29
+00:01:24,02 --> 00:01:26,08
+It's not working, so something's off.
+
+30
+00:01:26,08 --> 00:01:30,07
+So I'm going to go into the App.jsx,
+
+31
+00:01:30,07 --> 00:01:35,05
+where we have that particular element that's happening here.
+
+32
+00:01:35,05 --> 00:01:39,00
+So here, I am basically passing the function,
+
+33
+00:01:39,00 --> 00:01:40,02
+but it's not updating.
+
+34
+00:01:40,02 --> 00:01:42,08
+So let's go here and see why.
+
+35
+00:01:42,08 --> 00:01:44,02
+So I have my function here,
+
+36
+00:01:44,02 --> 00:01:47,01
+everything's set properly,
+
+37
+00:01:47,01 --> 00:01:49,05
+setState, currentPlayer, blah, blah, blah.
+
+38
+00:01:49,05 --> 00:01:51,04
+But as I scroll up,
+
+39
+00:01:51,04 --> 00:01:57,03
+what I realize is that I didn't declare
+
+40
+00:01:57,03 --> 00:02:02,02
+that particular function that I'm passing in my constructor.
+
+41
+00:02:02,02 --> 00:02:04,02
+So I need to do this now.
+
+42
+00:02:04,02 --> 00:02:05,00
+So I'm going
+
+43
+00:02:05,00 --> 00:02:13,07
+to do this.updateCurrentPlayer = this.updateCurrentPlayer
+
+44
+00:02:13,07 --> 00:02:15,06
+and then bind this.
+
+45
+00:02:15,06 --> 00:02:18,09
+So basically, what I've done here is I've declared it
+
+46
+00:02:18,09 --> 00:02:19,08
+in my constructor.
+
+47
+00:02:19,08 --> 00:02:22,04
+So when you're using basically the state
+
+48
+00:02:22,04 --> 00:02:26,04
+and passing down functions into your components
+
+49
+00:02:26,04 --> 00:02:29,01
+like we're doing here, then using them as a prop,
+
+50
+00:02:29,01 --> 00:02:33,02
+you need to declare it in your class component here
+
+51
+00:02:33,02 --> 00:02:34,08
+in your constructor.
+
+52
+00:02:34,08 --> 00:02:36,09
+Very important to do this.
+
+53
+00:02:36,09 --> 00:02:40,01
+Okay, now there is one other thing
+
+54
+00:02:40,01 --> 00:02:42,08
+that I want to fix here in my app.
+
+55
+00:02:42,08 --> 00:02:44,01
+Here is the menu.
+
+56
+00:02:44,01 --> 00:02:46,00
+I don't like the style for this one.
+
+57
+00:02:46,00 --> 00:02:49,08
+So what I'm going to do is basically redo
+
+58
+00:02:49,08 --> 00:02:51,07
+that particular line here,
+
+59
+00:02:51,07 --> 00:02:53,06
+and I'm going to do a div
+
+60
+00:02:53,06 --> 00:02:58,04
+of className='nav-wrapper
+
+61
+00:02:58,04 --> 00:03:02,09
+blue darken-1'.
+
+62
+00:03:02,09 --> 00:03:07,00
+And I'm going to make an a tag with the href
+
+63
+00:03:07,00 --> 00:03:13,05
+of forward slash with a className of brand-logo.
+
+64
+00:03:13,05 --> 00:03:17,06
+Again, I'm leveraging the Materialize styles here
+
+65
+00:03:17,06 --> 00:03:20,07
+and I'm going to call the title Soccer Management.
+
+66
+00:03:20,07 --> 00:03:25,02
+There you go, and I've fixed this here too.
+
+67
+00:03:25,02 --> 00:03:29,06
+All right, so now what we need to do is go inside
+
+68
+00:03:29,06 --> 00:03:31,04
+of our PlayerForm 'cause clearly,
+
+69
+00:03:31,04 --> 00:03:33,04
+we have an issue with our PlayerForm as well
+
+70
+00:03:33,04 --> 00:03:36,08
+'cause when we try to submit a new player,
+
+71
+00:03:36,08 --> 00:03:38,06
+it's not working.
+
+72
+00:03:38,06 --> 00:03:43,04
+So at first, I was like, "No, there's nothing wrong here.
+
+73
+00:03:43,04 --> 00:03:45,05
+So I'm doing the submit properly,
+
+74
+00:03:45,05 --> 00:03:48,07
+the function is done properly here."
+
+75
+00:03:48,07 --> 00:03:52,00
+And everything else is good up until I got to this,
+
+76
+00:03:52,00 --> 00:03:55,01
+and it took me in between videos a bit
+
+77
+00:03:55,01 --> 00:03:57,04
+to figure out my typo here.
+
+78
+00:03:57,04 --> 00:03:59,08
+And if you read the error when you submit,
+
+79
+00:03:59,08 --> 00:04:03,03
+it literally tags this
+
+80
+00:04:03,03 --> 00:04:09,00
+to the actual localhost port 5173,
+
+81
+00:04:09,00 --> 00:04:10,05
+which is the React application.
+
+82
+00:04:10,05 --> 00:04:13,00
+So at first I was like, "Okay, this is weird."
+
+83
+00:04:13,00 --> 00:04:14,07
+And then I went back here and I said,
+
+84
+00:04:14,07 --> 00:04:17,09
+"Oh wait, I forgot to do my forward slashes here."
+
+85
+00:04:17,09 --> 00:04:23,00
+So it wasn't an official URL that Axios could take,
+
+86
+00:04:23,00 --> 00:04:26,08
+and then send the submit form.
+
+87
+00:04:26,08 --> 00:04:31,06
+And that was the error, then that was why it was working.
+
+88
+00:04:31,06 --> 00:04:35,04
+So if we save that, everything is good.
+
+89
+00:04:35,04 --> 00:04:39,03
+I'm going to refresh just out of my good nature,
+
+90
+00:04:39,03 --> 00:04:44,00
+and I'm seeing a little problem here with the menu.
+
+91
+00:04:44,00 --> 00:04:46,05
+Let's go back to our menu.
+
+92
+00:04:46,05 --> 00:04:51,07
+This is a minor thing that we can fix.
+
+93
+00:04:51,07 --> 00:04:54,07
+I'm in the app, yes, okay.
+
+94
+00:04:54,07 --> 00:04:58,04
+The problem is I didn't do this with a nav wrapper,
+
+95
+00:04:58,04 --> 00:05:00,05
+so I need to change this very quickly.
+
+96
+00:05:00,05 --> 00:05:04,08
+So I'm going to do that right now, <nav>,
+
+97
+00:05:04,08 --> 00:05:09,09
+and then close that out here,
+
+98
+00:05:09,09 --> 00:05:12,02
+and then that should fix it.
+
+99
+00:05:12,02 --> 00:05:15,07
+There you go. Okay, so I have my title, I have my players.
+
+100
+00:05:15,07 --> 00:05:19,04
+If I select my player, now they're going to show here.
+
+101
+00:05:19,04 --> 00:05:22,07
+So we're all good, and now I need to add a new player.
+
+102
+00:05:22,07 --> 00:05:29,01
+So I'm going to just test it with Manuello Henrietto.
+
+103
+00:05:29,01 --> 00:05:32,06
+Phone, 444555123,
+
+104
+00:05:32,06 --> 00:05:38,00
+there you go, me6@me6.com
+
+105
+00:05:38,00 --> 00:05:42,03
+ADD PLAYER, Refresh.
+
+106
+00:05:42,03 --> 00:05:46,08
+We have the new player here. We're all good to go.
+
+107
+00:05:46,08 --> 00:05:49,01
+Okay, so now you have an application
+
+108
+00:05:49,01 --> 00:05:51,09
+that can add new players and see a list of our players.
+
+109
+00:05:51,09 --> 00:05:53,00
+But what about deleting
+
+110
+00:05:53,00 --> 00:05:55,01
+or updating the current list of players?
+
+111
+00:05:55,01 --> 00:05:57,03
+We won't cover these elements in this course,
+
+112
+00:05:57,03 --> 00:05:59,07
+but you could easily use the same methods we've covered
+
+113
+00:05:59,07 --> 00:06:02,07
+for adding new contacts or listing now
+
+114
+00:06:02,07 --> 00:06:04,03
+that you have a base code
+
+115
+00:06:04,03 --> 00:06:08,03
+with Axios making the request to the APIs.
+
+116
+00:06:08,03 --> 00:06:10,04
+Simply add a button in the players single,
+
+117
+00:06:10,04 --> 00:06:12,07
+following the button syntax from Materialize.
+
+118
+00:06:12,07 --> 00:06:14,06
+And then in the same component,
+
+119
+00:06:14,06 --> 00:06:17,07
+add a call to Axios to delete the current player.
+
+120
+00:06:17,07 --> 00:06:20,03
+You could also leverage a form we created,
+
+121
+00:06:20,03 --> 00:06:22,04
+and pull the values into the field
+
+122
+00:06:22,04 --> 00:06:27,00
+to update a particular player within Axios PUT to the API.
+
+123
+00:06:27,00 --> 00:06:30,02
+A lot of code needs to do these transaction could be written
+
+124
+00:06:30,02 --> 00:06:34,00
+by you and I challenge you to keep going on your own.
+
+125
+00:06:34,00 --> 00:06:37,02
+Also, there are a few additional values we've defined to add
+
+126
+00:06:37,02 --> 00:06:40,07
+to the application, such as the player is a coach,
+
+127
+00:06:40,07 --> 00:06:42,02
+strength value, et cetera.
+
+128
+00:06:42,02 --> 00:06:44,07
+We minimize the typing of all these different values
+
+129
+00:06:44,07 --> 00:06:47,07
+on the front end as they were repetitive.
+
+130
+00:06:47,07 --> 00:06:49,03
+But this would be a good exercise for you
+
+131
+00:06:49,03 --> 00:06:51,09
+to test your knowledge and practice.
+
+132
+00:06:51,09 --> 00:06:54,07
+So this completes this application,
+
+133
+00:06:54,07 --> 00:06:58,00
+and feel free to challenge yourself and keep going with it.
+
